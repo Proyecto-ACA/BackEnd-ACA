@@ -43,8 +43,8 @@ function initSequelize() {
 
 function syncTables() {
     var order = [
-        'users/role',
-        'users/user',
+        'lessons/level',
+        'lessons/category',
     ];
 
     async.eachSeries(order, function (file, callback) {
