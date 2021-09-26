@@ -1,11 +1,11 @@
 const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 const { sequelize } = require('../../services/initService');
-const Category = require('./category');
-const Level = require('./level');
+const Difficulty = require('./difficulty');
+const Category= require('./category');
 const Sign = require('../signs/sign');
 
-const Lesson = sequelize.define('lessons', {
+const Test = sequelize.define('tests', {
     id: {
         allowNull: false,
         autoIncrement: true,
@@ -16,7 +16,7 @@ const Lesson = sequelize.define('lessons', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    level_id: {
+    difficulty_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
     },
@@ -30,7 +30,7 @@ const Lesson = sequelize.define('lessons', {
     },
 }, { timestamps: false });
 
-Lesson.belongsTo(Level, { as: 'level',foreignKey: 'level_id' });
+Lesson.belongsTo(Difficulty, { as: 'level',foreignKey: 'level_id' });
 Lesson.belongsTo(Category, { as: 'category',foreignKey: 'category_id' });
 Lesson.belongsTo(Sign, { as: 'sign',foreignKey: 'sign_id' });
 
