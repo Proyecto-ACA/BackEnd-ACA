@@ -23,21 +23,27 @@ const config = {
   port: process.env.POSTGRES_PORT,
   host: process.env.POSTGRES_HOST
 }
-pgtools.createdb(config, process.env.POSTGRES_DATABASE, function (err, res) {
+
+console.log(`pool. user: ${config.user} db: ${process.env.POSTGRES_DATABASE} host: ${config.host} pass: ${config.password} port: ${config.port}`)
+
+/*pgtools.createdb(config, process.env.POSTGRES_DATABASE, (err, res) => {
   if (err) {
       if(err.name === 'duplicate_database'){
           console.log('Database already exists');
       }
       else{
+        console.log("err")
           console.log(err);
       }
   }
-  else {
-      console.log('Database has been created successfully!');
-  }
+  
+  console.log('Database has been created successfully!');
   initSequelize();
-});
 
+});*/
+initSequelize();
+
+console.log("post base");
 
 app.use(logger('dev'));
 app.use(express.json());

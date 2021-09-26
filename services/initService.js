@@ -1,4 +1,5 @@
 const Pool = require('pg').Pool
+require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const async = require('async');
 const connectionString = `postgres://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_HOST}:${process.env.POSTGRES_PORT}/${process.env.POSTGRES_DATABASE}`;
