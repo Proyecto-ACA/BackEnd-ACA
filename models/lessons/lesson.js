@@ -59,13 +59,13 @@ module.exports = Lesson;
 //nombre
 //dificultadID facil, mwdio, difici
 //preguntas
+//------categoria, opciones aleatorias
 
 
 //pregunta
 //categoriaId: opcion multiple...etc 
 //enunciado
 //palabras, nombre, categoria
-//------categoria, opciones aleatorias
 
 
 

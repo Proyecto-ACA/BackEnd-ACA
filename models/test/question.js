@@ -1,31 +1,25 @@
 const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 const { sequelize } = require('../../services/initService');
-const Difficulty = require('./difficulty');
-const Category = require('./category');
+const Sign = require('../sign/sign');
 
-const Test = sequelize.define('tests', {
+const Question = sequelize.define('questions', {
     id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
     },
-    name: {
+    statement: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    difficulty_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-    },
-    category_id: {
+    sign_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
     },
 }, { timestamps: false });
 
-Test.belongsTo(Difficulty, { as: 'difficulty',foreignKey: 'difficulty_id' });
-Test.belongsTo(Category, { as: 'category',foreignKey: 'category_id' });
+Question.belongsTo(Sign, { as: 'sign',foreignKey: 'sign_id' });
 
-module.exports = Test;
+module.exports = Question;
