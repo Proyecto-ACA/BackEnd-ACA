@@ -1,9 +1,10 @@
 const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 const { sequelize } = require('../../services/initService');
-const Test = require('./test');
+const Category = require('./category');
 
-const Statisticsxtest = sequelize.define('Statisticsxtest', {
+
+const Statisticsxcategory = sequelize.define('Statisticsxcategory', {
     id: {
         allowNull: false,
         autoIncrement: true,
@@ -14,17 +15,17 @@ const Statisticsxtest = sequelize.define('Statisticsxtest', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    test_id: {
+    category_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
-    },
+    }, 
     statistics_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
     },
 }, { timestamps: false });
 
-Statisticsxtest.belongsTo(Test, { as: 'test',foreignKey: 'test_id' });
-Statisticsxtest.belongsTo(Statistics, { as: 'statistics',foreignKey: 'statistics_id' });
+Statisticsxcategory.belongsTo(Category, { as: 'category',foreignKey: 'category_id' });
+Statisticsxcategory.belongsTo(Statistics, { as: 'statistics',foreignKey: 'statistics_id' });
 
-module.exports = Statisticsxtest;
+module.exports = Statisticsxcategory;
