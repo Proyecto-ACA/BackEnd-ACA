@@ -35,3 +35,37 @@ Lesson.belongsTo(Category, { as: 'category',foreignKey: 'category_id' });
 Lesson.belongsTo(Sign, { as: 'sign',foreignKey: 'sign_id' });
 
 module.exports = Lesson;
+
+//****palabra */
+//descripcion
+//imagen representativar
+//gif
+//nombre
+//categoriaID: animales, saludos,etc
+
+//****categoria
+//nombre
+//imagen representativa
+
+//**** leccion
+//descripcion de la leccion
+//imagen descriptivada
+//categoriaID: animales, saludos,etc
+//nivelID: muyfacil, facil, normal , dificil, muy dificil
+//palabras... unas 3 -> tabla cruz
+
+
+//***test */
+//nombre
+//dificultadID facil, mwdio, difici
+//preguntas
+
+
+//pregunta
+//categoriaId: opcion multiple...etc 
+//enunciado
+//palabras, nombre, categoria
+//------categoria, opciones aleatorias
+
+
+
