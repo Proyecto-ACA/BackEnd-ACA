@@ -1,8 +1,9 @@
 const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 const { sequelize } = require('../../services/initService');
+const Category = require('./singCategory');
 
-const LessonCategory = sequelize.define('lesson_categorys', {
+const Sign = sequelize.define('signs', {
     id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,12 +13,25 @@ const LessonCategory = sequelize.define('lesson_categorys', {
     name: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: {
-            args: true,
-            msg: { code: 40146, msg: 'Nombre de categoria de leccion ya existe' },
-        }
+    },
+    sign_category_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+    },
+    sign: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    image: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
 }, { timestamps: false });
 
+Sign.belongsTo(Category, { as: 'category',foreignKey: 'sign_category_id' });
 
-module.exports = LessonCategory;
+module.exports = Sign;
