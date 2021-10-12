@@ -46,6 +46,12 @@ function syncTables() {
     var order = [
         'lessons/level',
         'lessons/category',
+        'lessons/lesson',
+        'lessons/lessonxsign',
+        'test/category',
+        'test/difficulty',
+        'test/question',
+        'test/test',
     ];
 
     async.eachSeries(order, function (file, callback) {
