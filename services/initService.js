@@ -46,9 +46,9 @@ function syncTables() {
     var order = [
         'lessons/level',
         'lessons/category',
+        'signs/sign',
         'lessons/lesson',
         'lessons/lessonxsign',
-        'signs/sign',
         'test/category',
         'test/difficulty',
         'test/question',
