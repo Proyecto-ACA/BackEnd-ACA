@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 const { sequelize } = require('../../services/initService');
-const Category = require('./singCategory');
+const Category = require('../lessons/category');
 
 const Sign = sequelize.define('signs', {
     id: {
@@ -14,7 +14,7 @@ const Sign = sequelize.define('signs', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    sign_category_id: {
+    category_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
     },
@@ -32,6 +32,6 @@ const Sign = sequelize.define('signs', {
     },
 }, { timestamps: false });
 
-Sign.belongsTo(Category, { as: 'category',foreignKey: 'sign_category_id' });
+Sign.belongsTo(Category, { as: 'category',foreignKey: 'category_id' });
 
 module.exports = Sign;

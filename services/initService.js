@@ -48,6 +48,7 @@ function syncTables() {
         'lessons/category',
         'lessons/lesson',
         'lessons/lessonxsign',
+        'signs/sign',
         'test/category',
         'test/difficulty',
         'test/question',
