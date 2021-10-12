@@ -2,6 +2,8 @@ const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 const { sequelize } = require('../../services/initService');
 
+// opcion multiple, falso verdadero
+
 const TestCategory = sequelize.define('test_categorys', {
     id: {
         allowNull: false,
