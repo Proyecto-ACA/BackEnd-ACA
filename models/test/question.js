@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 const { sequelize } = require('../../services/initService');
-const Sign = require('../sign/sign');
+const Sign = require('../signs/sign');
 
 const Question = sequelize.define('questions', {
     id: {
