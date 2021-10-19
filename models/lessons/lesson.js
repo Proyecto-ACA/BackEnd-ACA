@@ -24,15 +24,10 @@ const Lesson = sequelize.define('lessons', {
         type: Sequelize.INTEGER,
         allowNull: false,
     },
-    sign_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-    },
 }, { timestamps: false });
 
 Lesson.belongsTo(Level, { as: 'level',foreignKey: 'level_id' });
 Lesson.belongsTo(Category, { as: 'category',foreignKey: 'category_id' });
-Lesson.belongsTo(Sign, { as: 'sign',foreignKey: 'sign_id' });
 
 module.exports = Lesson;
 

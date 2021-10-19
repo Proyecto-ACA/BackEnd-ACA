@@ -4,7 +4,7 @@ const { sequelize } = require('../../services/initService');
 const Lesson = require('./lesson');
 const Sign = require('../signs/sign');
 
-const LessonXSign = sequelize.define('lessons_x_signs', {
+const LessonXSign = sequelize.define('lesson_x_sign', {
     id: {
         allowNull: false,
         autoIncrement: true,
