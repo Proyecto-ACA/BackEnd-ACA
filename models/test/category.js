@@ -11,6 +11,14 @@ const TestCategory = sequelize.define('test_categorys', {
         primaryKey: true,
         type: Sequelize.INTEGER
     },
+    category: {
+        allowNull: false,
+        type: DataTypes.INTEGER,
+        unique: {
+            args: true,
+            msg: { code: 40146, msg: 'Categoria de evaluacion ya existe' },
+        }
+    },
     name: {
         type: DataTypes.STRING,
         allowNull: false,

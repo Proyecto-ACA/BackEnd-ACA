@@ -5,44 +5,47 @@ const Category = require('../controllers/tests/category');
 const Difficulty = require('../controllers/tests/difficulty');
 
 const routes = {
-    categoryGetAll = '/category/getAll',
-    categorySave = '/category/save',
-    categoryDelete = '/category/delete',
-    categoryUpdate = '/category/update',
+    categoryGetAll: '/category/getAll',
+    categorySave: '/category/save',
+    categoryDelete: '/category/delete',
+    categoryUpdate: '/category/update',
 
-    difficultyGetAll = '/difficulty/getAll',
-    difficultySave = '/difficulty/save',
-    difficultyDelete = '/difficulty/delete',
-    difficultyUpdate = '/difficulty/update',
+    difficultyGetAll: '/difficulty/getAll',
+    difficultySave: '/difficulty/save',
+    difficultyDelete: '/difficulty/delete',
+    difficultyUpdate: '/difficulty/update',
 
-    testGetAll = '/test/getAll',
-    testSave = '/test/save',
-    testDelete = '/test/delete',
-    testUpdate = '/test/update',
+    testGetAll: '/test/getAll',
+    testSave: '/test/save',
+    testDelete: '/test/delete',
+    testUpdate: '/test/update',
 }
 
 router.get(routes.categoryGetAll, function(req, res, next) {
     Category.getAll(req, res);
 });
 
-router.get(routes.categorySave, function(req, res, next) {
+router.post(routes.categorySave, function(req, res, next) {
     let item = {
-        id: req.params.id,
-        name: req.params.name,
+        category: req.body.category,
+        name: req.body.name,
     }
+    console.log(item);
+    console.log(req.body.category);
     Category.save(item, res);
 });
 
-router.get(routes.categoryDelete, function(req, res, next) {
+router.delete(routes.categoryDelete, function(req, res, next) {
     let item = {
         id: req.params.id,
     }
     Category.delete(item, res);
 });
 
-router.get(routes.categoryUpdate, function(req, res, next) {
+router.patch(routes.categoryUpdate, function(req, res, next) {
     let item = {
         id: req.params.id,
+        category: req.params.category,
         name: req.params.name,
     }
     Category.update(item, res);
@@ -52,7 +55,7 @@ router.get(routes.difficultyGetAll, function(req, res, next) {
     Difficulty.getAll(req, res);
 });
 
-router.get(routes.difficultySave, function(req, res, next) {
+router.post(routes.difficultySave, function(req, res, next) {
     let item = {
         id: req.params.id,
         difficulty: req.params.difficulty, //valor numerico
@@ -61,14 +64,14 @@ router.get(routes.difficultySave, function(req, res, next) {
     Difficulty.save(item, res);
 });
 
-router.get(routes.difficultyDelete, function(req, res, next) {
+router.delete(routes.difficultyDelete, function(req, res, next) {
     let item = {
         id: req.params.id,
     }
     Difficulty.delete(item, res);
 });
 
-router.get(routes.difficultyUpdate, function(req, res, next) {
+router.patch(routes.difficultyUpdate, function(req, res, next) {
     let item = {
         id: req.params.id,
         difficulty: req.params.difficulty, //valor numerico
@@ -81,24 +84,23 @@ router.get(routes.testGetAll, function(req, res, next) {
     Test.getAll(req, res);
 });
 
-router.get(routes.testSave, function(req, res, next) {
+router.post(routes.testSave, function(req, res, next) {
     let item = {
-        id: req.params.id,
-        name: req.params.name,
-        difficulty: req.params.difficulty, //id
-        category: req.params.category, //id
+        name: req.body.name,
+        difficulty_id: req.body.difficulty, //id
+        category_id: req.body.category, //id
     }
     Test.save(item, res);
 });
 
-router.get(routes.testDelete, function(req, res, next) {
+router.delete(routes.testDelete, function(req, res, next) {
     let item = {
         id: req.params.id,
     }
     Test.delete(item, res);
 });
 
-router.get(routes.testUpdate, function(req, res, next) {
+router.patch(routes.testUpdate, function(req, res, next) {
     let item = {
         id: req.params.id,
         name: req.params.name,

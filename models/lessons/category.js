@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 const { sequelize } = require('../../services/initService');
 
-const LessonCategory = sequelize.define('lesson_categorys', {
+const LessonCategory = sequelize.define('categorys', {
     id: {
         allowNull: false,
         autoIncrement: true,
