@@ -53,6 +53,9 @@ function syncTables() {
         'test/difficulty',
         'test/question',
         'test/test',
+        'users/rol',
+        'users/user',
+        
     ];
 
     async.eachSeries(order, function (file, callback) {
