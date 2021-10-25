@@ -16,6 +16,7 @@ const routes = {
     difficultyUpdate: '/difficulty/update',
 
     testGetAll: '/test/getAll',
+    testGetByCategory: '/test/getByCategory',
     testSave: '/test/save',
     testDelete: '/test/delete',
     testUpdate: '/test/update',
@@ -82,6 +83,10 @@ router.patch(routes.difficultyUpdate, function(req, res, next) {
 
 router.get(routes.testGetAll, function(req, res, next) {
     Test.getAll(req, res);
+});
+
+router.get(routes.testGetByCategory, (req, res, next) => {
+    Test.getByCategory(req.params.Category, res);
 });
 
 router.post(routes.testSave, function(req, res, next) {

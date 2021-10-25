@@ -25,6 +25,42 @@ const getAll = (req, res) => {
     }
 };
 
+const getByCategory = (category_id, res) => {
+    console.log('lesson get by category: ', req.body);
+    try {
+        Lesson.findAll({
+            where: { category_id: category_id}
+        })
+        .then((result)=>{
+            return res.status(200).send(transform(result));
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('lesson get by category: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
+const getByDifficulty = (difficulty_id, res) => {
+    console.log('lesson get by dificultty: ', req.body);
+    try {
+        Lesson.findAll({
+            where: { difficulty_id: difficulty_id}
+        })
+        .then((result)=>{
+            return res.status(200).send(transform(result));
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('lesson get by category: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
 const save = (item, res) => {
     console.log('lesson save: ', item);
     try {
@@ -105,4 +141,6 @@ module.exports = {
     save: save,
     update: update,
     deleteItem: deleteItem,
+    getByCategory: getByCategory,
+    getByDifficulty: getByDifficulty,
 };
