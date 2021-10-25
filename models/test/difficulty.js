@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const DataTypes = Sequelize.DataTypes;
 const { sequelize } = require('../../services/initService');
 
-const Difficulty = sequelize.define('test_difficulty', {
+const Difficulty = sequelize.define('test_difficultys', {
     id: {
         allowNull: false,
         autoIncrement: true,

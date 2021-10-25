@@ -1,4 +1,6 @@
 const Test = require('../../models/test/test');
+const Difficulty = require('../../models/test/difficulty');
+const Category = require('../../models/test/category');
 
 const transform = (records) => {
     return records.map((record) => {
@@ -12,7 +14,12 @@ const transform = (records) => {
 const getAll = (req, res) => {
     console.log('Test getAll: ', req.body);
     try {
-        Test.findAll()
+        Test.findAll({
+            include: [
+                { model: Difficulty, as: 'difficulty'},
+                { model: Category, as: 'category'},
+            ],
+        })
         .then((result)=>{
             return res.status(200).send(transform(result));
         })
