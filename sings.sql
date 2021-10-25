@@ -46,7 +46,7 @@ INSERT INTO signs(name, category_id, sign, description, image)
 VALUES ('N',1,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fabecedario_n.gif?alt=media&token=0674f6ef-60a6-4ec8-a256-ddd1ce3e969b','Decimocuarta letra del alfabeto español; representa una consonante nasal, alveolar, oclusiva y sonora. Su nombre es ene.','https://moldesde.com/wp-content/uploads/2012/02/letra_39.png.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('Ñ',1,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fabecedario_n_enie.gif?alt=media&token=0dd4041e-cec1-4665-a0f3-2a24845b265e','La ñ es la decimoquinta letra y la duodécima consonante del alfabeto español donde representa una consonante nasal palatal.​La ñ está también presente en los alfabetos de muchos otros idiomas relacionados históricamente con el español como asturiano, gallego, aimara, bubi, chamorro, guaraní, quechua o filipino.','https://moldesde.com/wp-content/uploads/2012/02/letra_52.png.jpg')
+VALUES ('Ñ',1,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fabecedario_n_enie.gif?alt=media&token=0dd4041e-cec1-4665-a0f3-2a24845b265e','La ñ es la decimoquinta letra y la duodécima consonante del alfabeto español donde representa una consonante nasal palatal.​La ñ está también presente en los alfabetos de muchos otros idiomas relacionados históricamente con el español como asturiano, gallego, aimara, bubi, chamorro, guaraní, quechua o filipino.','https://moldesde.com/wp-content/uploads/2012/02/letra_52.png.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
 VALUES ('O',1,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fabecedario_o.gif?alt=media&token=d0c15ecc-21a5-44b5-aff0-22ac503ca9db','Decimosexta letra del alfabeto español, su nombre es o ; representa la vocal media, posterior o velar y sonora.','https://moldesde.com/wp-content/uploads/2012/02/letra_40.png.jpg');
@@ -288,11 +288,13 @@ VALUES ('¿Como estas?',7,'https://firebasestorage.googleapis.com/v0/b/lessa-c8c
 INSERT INTO signs(name, category_id, sign, description, image)
 VALUES ('¿Como te llamas?',7,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_cualestunombre.gif?alt=media&token=e6e7b083-80f0-43a6-b40e-9026d4aa2ac3','Expresion para preguntar por el nombre de una persona con la que se lleva a cabo una conversación','https://files.liveworksheets.com/def_files/2020/8/2/802175328534592/802175328534592001.jpg');
 
-INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+-------------- Camniar
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Caminar',8,'"https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_caminar.gif?alt=media&token=8790816f-469d-409c-be7b-9c7c005ea8a6"','Trasladarse o moverse [una persona o un animal] de un lugar a otro mediante su propio medio de locomoción.','https://www.eluniverso.com/resizer/gJtYP34qxbOhC8JYOBttznRcCmM=/1000x667/smart/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/eluniverso/F44J3VBQMRBRZCNWZT5TCPN5UA.jpg');
+
+INSERT INTO signs(name, category_id, sign, description, image)
+VALUES ('Escribir',8,'"https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_escribir.gif?alt=media&token=be084573-d85b-458b-a438-cd30ba990a11"','Trazar signos que representan ideas, palabras, etc., con un instrumento adecuado, como un bolígrafo, lápiz o máquina, sobre un papel o cualquier otro soporte.','https://imagenes.20minutos.es/files/image_656_370/uploads/imagenes/2017/02/04/417224.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
 VALUES ('',,'','','');
