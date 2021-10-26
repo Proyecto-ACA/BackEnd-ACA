@@ -17,6 +17,10 @@ const LessonCategory = sequelize.define('categorys', {
             msg: { code: 40146, msg: 'Nombre de categoria de leccion ya existe' },
         }
     },
+    image: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
 }, { timestamps: false });
 
 
