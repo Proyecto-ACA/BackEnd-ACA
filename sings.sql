@@ -291,73 +291,97 @@ VALUES ('¿Como te llamas?',7,'https://firebasestorage.googleapis.com/v0/b/lessa
 -------------- Camniar
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('Caminar',8,'"https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_caminar.gif?alt=media&token=8790816f-469d-409c-be7b-9c7c005ea8a6"','Trasladarse o moverse [una persona o un animal] de un lugar a otro mediante su propio medio de locomoción.','https://www.eluniverso.com/resizer/gJtYP34qxbOhC8JYOBttznRcCmM=/1000x667/smart/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/eluniverso/F44J3VBQMRBRZCNWZT5TCPN5UA.jpg');
+VALUES ('Caminar',8,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_caminar.gif?alt=media&token=8790816f-469d-409c-be7b-9c7c005ea8a6','Trasladarse o moverse [una persona o un animal] de un lugar a otro mediante su propio medio de locomoción.','https://www.eluniverso.com/resizer/gJtYP34qxbOhC8JYOBttznRcCmM=/1000x667/smart/filters:quality(70)/cloudfront-us-east-1.images.arcpublishing.com/eluniverso/F44J3VBQMRBRZCNWZT5TCPN5UA.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('Escribir',8,'"https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_escribir.gif?alt=media&token=be084573-d85b-458b-a438-cd30ba990a11"','Trazar signos que representan ideas, palabras, etc., con un instrumento adecuado, como un bolígrafo, lápiz o máquina, sobre un papel o cualquier otro soporte.','https://imagenes.20minutos.es/files/image_656_370/uploads/imagenes/2017/02/04/417224.jpg');
+VALUES ('Escribir',8,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_escribir.gif?alt=media&token=be084573-d85b-458b-a438-cd30ba990a11','Trazar signos que representan ideas, palabras, etc., con un instrumento adecuado, como un bolígrafo, lápiz o máquina, sobre un papel o cualquier otro soporte.','https://imagenes.20minutos.es/files/image_656_370/uploads/imagenes/2017/02/04/417224.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Estudiar',8,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_estudiar.gif?alt=media&token=31500286-d173-490f-ae96-1752173fc4e9','Aplicar la inteligencia o ejercitar el entendimiento para adquirir el conocimiento de una cosa, aprender un arte o una profesión, memorizar el contenido de algo, etc.','https://www.edix.com/es/wp-content/uploads/sites/2/2020/04/herramientas-estudiar-online-1.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Jugar',8,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_jugar.gif?alt=media&token=b2e0a49e-321a-491e-b3a6-54d6c1ac96ae','Realizar una actividad o hacer una cosa, generalmente ejercitando alguna capacidad o destreza, con el fin de divertirse o entretenerse.','https://www.mindicsalud.com/sites/default/files/ninos-jugando.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Leer',8,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_leer.gif?alt=media&token=5f22830a-ef98-455d-bd9c-cd1f400c898d','Pasar la vista por los signos de una palabra o texto escrito para interpretarlos mentalmente o traducirlos en sonidos.','https://www.hola.com/imagenes/estar-bien/20190612143633/beneficios-leer-voz-alta-cs/0-689-152/beneficios-leer-voz-alta-t.jpg?filter=w600');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Conducir',8,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_manejar.gif?alt=media&token=087f77d6-3830-4868-a590-ca7bcd2c0a0d','Llevar [un vehículo] personas o cosas de un sitio a otro.','https://mitsubishi-motors.com.co/blog/wp-content/uploads/2020/08/mantener-la-calma-aprendiendo-a-manejar.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Beber',8,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_tomar.gif?alt=media&token=a16908d4-e204-4b4e-8ba7-850f2743022e','Ingerir un líquido por la boca.','https://vcm.emol.com/wp-content/uploads/2019/01/tomar-agua-wordpress.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Trabajar',8,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_trabajar.gif?alt=media&token=3d703d68-a129-41b4-9557-898f4d862ece','Realizar una actividad física o intelectual, en general de forma continuada, y recibir un salario por ello.','https://ichef.bbci.co.uk/news/640/cpsprodpb/1618A/production/_108760509_gettyimages-524176098.jpg');
+
+------------- Ocupaciones
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Carpintero',9,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_carpintero.gif?alt=media&token=291ab607-4d2d-4033-9494-e3f36cdebdab','Persona que tiene por oficio fabricar o arreglar objetos de madera.','https://cypes.grupoeurohispana.com/img/profesion/1329/recurso-principal-279103057.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Enfermero',9,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_enfermera.gif?alt=media&token=7da2b63c-2406-4deb-8fe7-a7f2cacff575','Persona que tiene por oficio asistir o atender a enfermos, heridos o lesionados bajo las prescripciones de un médico, o ayudar al médico o cirujano.','https://wp-growpro.s3-eu-west-1.amazonaws.com/media/2016/01/enfermera_australia_cover.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Motorista',9,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_motorista.gif?alt=media&token=50484a53-276c-4a81-9668-3df685bacd36','Que conduce un automóvil, en especial si se dedica a ello profesionalmente.','https://www.sitalento.com/wp-content/uploads/2018/04/motorista.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Policia',9,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_policia.gif?alt=media&token=b29bb95e-ec8e-4807-be79-85c13f8aed20','Cuerpo a las órdenes de las autoridades políticas o militares que se encarga del mantenimiento del orden público, la seguridad de los ciudadanos y el cumplimiento de las leyes.','https://www.presidencia.gob.sv/wp-content/uploads/2021/04/photo5102673348583860709.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Profesor',9,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_profesor.gif?alt=media&token=bbdcb565-af56-46c1-a594-a941f6cd2e7c','Persona que tiene por oficio enseñar una ciencia, un arte, una técnica, etc.','https://www.unir.net/wp-content/uploads/2020/06/iStock-899355338.jpg');
+
+-------------- Numeros
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Uno',10,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_uno.gif?alt=media&token=45ff44d4-cfa9-4964-8528-327524fd533d','El uno (1) es el primero o segundo, tema en discusión, número natural y es el número entero que sigue al cero (0) y precede al dos (2). El uno (1) no es número primo ni número compuesto.','https://revistawe.files.wordpress.com/2015/03/1.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Dos',10,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_dos.gif?alt=media&token=7dccce54-0549-4c1f-808e-67fbadaf919a','El dos es el número natural que sigue al uno y precede al tres. Pronunciación de dos.','https://static.grainger.com/rp/s/is/image/Grainger/3AM10_AS02');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Tres',10,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_tres.gif?alt=media&token=2a232b60-4baa-47a7-8c58-ec8fe82f0997','El tres es el número natural que sigue al 2 y precede al 4. Es un primo gemelo con 5.​El tres es un número impar formados por la suma de 2 y el 1. El tres es un número primo','https://cdn.goconqr.com/uploads/media/image/20907112/desktop_76e2fa94-4f3c-4f20-a9c5-811721893211.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Cuatro',10,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_cuatro.gif?alt=media&token=f5ec7942-77fa-42dc-acac-7a20a89372bd','El cuatro (4) es el número natural que sigue al tres y precede al cinco.','https://pbs.twimg.com/profile_images/378800000692276773/4cdedf79071eb161c3565d51eed571ac_400x400.png');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Cinco',10,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_cinco.gif?alt=media&token=8b3fae38-e141-4c7a-9de4-d5d6514bca81','El cinco es un número natural que sigue al cuatro y precede al seis.','https://symbolismofthings.com/wp-content/uploads/2019/06/numero-5-significado-e1561144167342.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Seis',10,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_seis.gif?alt=media&token=d2a31916-f397-42c0-9e11-14b8f6c96968','Es el primer número par en cuya descomposición factorial encontramos un número diferente a 2 (6 = 2 · 3).','https://cloud.educaplay.com/recursos/158/5063363/imagen_1_1578884700.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Siete',10,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_siete.gif?alt=media&token=cb4d4d56-ce04-4159-8c89-4c17ae8d80a3','El siete es el número natural que sigue al 6 y precede al 8.','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtOas5Ez5Peh_doDbqzreeHIWRJJNxqOIfYQ&usqp=CAU');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Ocho',10,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_ocho.gif?alt=media&token=ca604df9-acd3-4304-9510-8e0639dffbbb','El ocho (8) es el número natural que sigue al siete (7) y precede al nueve (9).','https://thumbnailer.mixcloud.com/unsafe/300x300/extaudio/9/c/7/f/d819-1113-42e7-919a-c01f7f62d9d6');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Nueve',10,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_nueve.gif?alt=media&token=719919b2-7696-47be-883a-6323fa02b1ca','El nueve es el número natural que sigue al 8 y precede al 10.','https://symbolismofthings.com/wp-content/uploads/2019/06/numero-9-significado-e1561388034395.jpg');
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Diez',10,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_diez.gif?alt=media&token=426f8bd5-76ef-4f9d-8682-8da4791a1792','El diez es el número natural par que sigue al 9 y precede al 11.','https://pbs.twimg.com/profile_images/378800000231085028/55effcbb3f7e6a651362ed4c3cb5b5a1.png');
+
+------------- Calendario
 
 INSERT INTO signs(name, category_id, sign, description, image)
-VALUES ('',,'','','');
+VALUES ('Lunes',11,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_lunes.gif?alt=media&token=88438f40-565e-45b8-8084-b4bc5ec00c18','Primer día de la semana civil, segundo de la litúrgica.','https://3.bp.blogspot.com/-JbpK_LzIGR8/WJzNs8-FUvI/AAAAAAAAAik/ofKABQ4udScfZ55x97yK5Z1RmXiZmrvogCLcB/s1600/misterio%2Bde%2Blos%2Bsiete%2Bd%25C3%25ADas%2Bde%2Bla%2Bsemana.jpg');
+
+INSERT INTO signs(name, category_id, sign, description, image)
+VALUES ('Martes',11,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_martes.gif?alt=media&token=d664432c-cfa7-44c4-bf2f-615595d264a9','Segundo día de la semana civil, tercero de la litúrgica.','https://3.bp.blogspot.com/-JbpK_LzIGR8/WJzNs8-FUvI/AAAAAAAAAik/ofKABQ4udScfZ55x97yK5Z1RmXiZmrvogCLcB/s1600/misterio%2Bde%2Blos%2Bsiete%2Bd%25C3%25ADas%2Bde%2Bla%2Bsemana.jpg');
+
+INSERT INTO signs(name, category_id, sign, description, image)
+VALUES ('Miercoles',11,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_miercoles.gif?alt=media&token=9c76c096-7347-4c0b-b32c-7e21900f25d5','Tercer día de la semana civil, cuarto de la semana litúrgica.','https://3.bp.blogspot.com/-JbpK_LzIGR8/WJzNs8-FUvI/AAAAAAAAAik/ofKABQ4udScfZ55x97yK5Z1RmXiZmrvogCLcB/s1600/misterio%2Bde%2Blos%2Bsiete%2Bd%25C3%25ADas%2Bde%2Bla%2Bsemana.jpg');
+
+INSERT INTO signs(name, category_id, sign, description, image)
+VALUES ('Jueves',11,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_jueves.gif?alt=media&token=f3a2bca6-8bcb-4ecd-9d28-5efcdbe9cba6','Cuarto día de la semana civil, quinto de la litúrgica.','https://3.bp.blogspot.com/-JbpK_LzIGR8/WJzNs8-FUvI/AAAAAAAAAik/ofKABQ4udScfZ55x97yK5Z1RmXiZmrvogCLcB/s1600/misterio%2Bde%2Blos%2Bsiete%2Bd%25C3%25ADas%2Bde%2Bla%2Bsemana.jpg');
+
+INSERT INTO signs(name, category_id, sign, description, image)
+VALUES ('Viernes',11,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_viernes.gif?alt=media&token=ebe13d7f-35b2-4535-9a9d-3ed570d2c8b1','Quinto día de la semana civil, quinto de la litúrgica.','https://3.bp.blogspot.com/-JbpK_LzIGR8/WJzNs8-FUvI/AAAAAAAAAik/ofKABQ4udScfZ55x97yK5Z1RmXiZmrvogCLcB/s1600/misterio%2Bde%2Blos%2Bsiete%2Bd%25C3%25ADas%2Bde%2Bla%2Bsemana.jpg');
+
+INSERT INTO signs(name, category_id, sign, description, image)
+VALUES ('Sabado',11,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_sabado.gif?alt=media&token=58f26cf3-cd06-41e4-9b44-a28844ca34c8','Sexto día de la semana civil, quinto de la litúrgica.','https://3.bp.blogspot.com/-JbpK_LzIGR8/WJzNs8-FUvI/AAAAAAAAAik/ofKABQ4udScfZ55x97yK5Z1RmXiZmrvogCLcB/s1600/misterio%2Bde%2Blos%2Bsiete%2Bd%25C3%25ADas%2Bde%2Bla%2Bsemana.jpg');
+
+INSERT INTO signs(name, category_id, sign, description, image)
+VALUES ('Domingo',11,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_domingo.gif?alt=media&token=0693041b-4158-483b-9dbc-a41c58e6b852','Septimo día de la semana civil, quinto de la litúrgica.','https://3.bp.blogspot.com/-JbpK_LzIGR8/WJzNs8-FUvI/AAAAAAAAAik/ofKABQ4udScfZ55x97yK5Z1RmXiZmrvogCLcB/s1600/misterio%2Bde%2Blos%2Bsiete%2Bd%25C3%25ADas%2Bde%2Bla%2Bsemana.jpg');
