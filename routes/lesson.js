@@ -38,6 +38,7 @@ router.post(routes.categorySave, function(req, res, next) {
     let item = {
         category: req.body.category,
         name: req.body.name,
+        image: req.body.image,
     }
     console.log(item);
     console.log(req.body.category);
@@ -56,6 +57,7 @@ router.patch(routes.categoryUpdate, function(req, res, next) {
         id: req.params.id,
         category: req.params.category,
         name: req.params.name,
+        image: req.params.image,
     }
     Category.update(item, res);
 });
