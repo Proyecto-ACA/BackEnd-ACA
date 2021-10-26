@@ -19,7 +19,7 @@ const Sign = sequelize.define('signs', {
         allowNull: false,
     },
     sign: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(500),
         allowNull: false,
     },
     description: {
@@ -27,7 +27,7 @@ const Sign = sequelize.define('signs', {
         allowNull: false,
     },
     image: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(500),
         allowNull: false,
     },
 }, { timestamps: false });
