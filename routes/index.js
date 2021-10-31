@@ -10,4 +10,8 @@ router.get('/test', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/test_1', function(req, res, next) {
+  res.json({message: 'alive'});
+});
+
 module.exports = router;
