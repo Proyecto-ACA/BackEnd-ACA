@@ -12,6 +12,12 @@ base de datos Postgres corriendo
 
 http://localhost:3023/
 
+# DB
+http://localhost:3023/category/getAll
+
+
+
+## TEST
 http://localhost:3023/test/category/getAll
 http://localhost:3023/test/difficulty/getAll
 http://localhost:3023/test/test/getAll

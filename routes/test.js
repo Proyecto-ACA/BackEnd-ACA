@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Test = require('../controllers/tests/test');
-const Category = require('../controllers/tests/category');
+const Category = require('../controllers/lessons/category');
 const Difficulty = require('../controllers/tests/difficulty');
 
 const routes = {
