@@ -1,6 +1,6 @@
 var people = [
     {
-      "name": "RIUB Zbriskie",
+      "name": "RUBI Zbriskie",
       "github": "mzabriskie",
       "twitter": "mzabriskie",
       "avatar": "199035"

@@ -14,6 +14,8 @@ http://localhost:3023/
 
 # DB
 http://localhost:3023/category/getAll
+
+
 http://localhost:3023/signs/getAll
 
 

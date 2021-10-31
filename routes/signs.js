@@ -15,8 +15,12 @@ router.get(routes.signsGetAll, function(req, res, next) {
 
 router.post(routes.signsSave, function(req, res, next) {
     let item = {
-        Signs: req.body.Signs,
-        name: req.body.name,
+        id: req.params.id,
+        name: req.params.name,
+        category_id: req.params.category_id,
+        sign: req.params.sign,
+        description: req.params.description,
+        image: req.params.image,
     }
     console.log(item);
     console.log(req.body.Signs);
@@ -33,8 +37,11 @@ router.delete(routes.signsDelete, function(req, res, next) {
 router.patch(routes.signsUpdate, function(req, res, next) {
     let item = {
         id: req.params.id,
-        Signs: req.params.Signs,
         name: req.params.name,
+        category_id: req.params.category_id,
+        sign: req.params.sign,
+        description: req.params.description,
+        image: req.params.image,
     }
     Signs.update(item, res);
 });
