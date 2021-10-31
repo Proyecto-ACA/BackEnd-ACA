@@ -1,4 +1,4 @@
-const Sign = require('../../models/signs/sing');
+const Sign = require('../../models/signs/sign');
 
 const transform = (records) => {
     return records.map((record) => {

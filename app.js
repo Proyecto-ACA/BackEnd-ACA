@@ -15,6 +15,7 @@ const { initSequelize } = require('./services/initService');
 const testRouter = require('./routes/test');
 // DB
 const category = require('./routes/category');
+const signs = require('./routes/signs');
 
 
 
@@ -66,6 +67,7 @@ app.use('/users', usersRouter);
 app.use('/test', testRouter);
 // DB
 app.use('/', category);
+app.use('/', signs);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
