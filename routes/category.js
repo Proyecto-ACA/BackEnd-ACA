@@ -15,11 +15,13 @@ router.get(routes.categoryGetAll, function(req, res, next) {
 
 router.post(routes.categorySave, function(req, res, next) {
     let item = {
-        category: req.body.category,
-        name: req.body.name,
+        name: req.body.name?req.body.name:false,
+        image: req.body.image?req.body.image:false,
+        
     }
     console.log(item);
-    console.log(req.body.category);
+    console.log(req.body.name);
+    console.log(req.body.image);
     Category.save(item, res);
 });
 

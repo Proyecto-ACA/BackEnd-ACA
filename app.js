@@ -17,7 +17,6 @@ const testRouter = require('./routes/test');
 const category = require('./routes/category');
 const signs = require('./routes/signs');
 
-const peopletest = require('./routes/peopletest');
 
 
 var cors = require('cors')
@@ -70,7 +69,6 @@ app.use('/test', testRouter);
 // DB
 app.use('/', category);
 app.use('/', signs);
-app.use('/', peopletest);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
