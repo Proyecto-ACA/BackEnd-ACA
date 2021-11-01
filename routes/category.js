@@ -4,6 +4,7 @@ const Category = require('../controllers/lessons/category');
 
 const routes = {
     categoryGetAll: '/category/getAll',
+    categoryGetOne: '/category/getOne/:id',
     categorySave: '/category/save',
     categoryDelete: '/category/delete',
     categoryUpdate: '/category/update',
@@ -11,6 +12,10 @@ const routes = {
 
 router.get(routes.categoryGetAll, function(req, res, next) {
     Category.getAll(req, res);
+});
+
+router.get(routes.categoryGetOne, function(req, res, next) {
+    Category.getOne(req, res);
 });
 
 router.post(routes.categorySave, function(req, res, next) {

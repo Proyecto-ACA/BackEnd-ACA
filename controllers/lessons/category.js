@@ -25,6 +25,23 @@ const getAll = (req, res) => {
         return res.status(500).send(err);
     }
 };
+const getOne = (req, res) => {
+    const id = req.params.id;
+    console.log('categorys getOne: ', id);
+    try {
+        Category.findByPk(id)
+        .then((result)=>{
+            return res.status(200).send(result);
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('categorys: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
 
 const save = (item, res) => {
     console.log('category save: ', item);
@@ -103,6 +120,7 @@ const deleteItem = (item, res) => {
 
 module.exports = {
     getAll: getAll,
+    getOne: getOne,
     save: save,
     update: update,
     deleteItem: deleteItem,
