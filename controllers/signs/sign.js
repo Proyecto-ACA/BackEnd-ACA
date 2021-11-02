@@ -1,4 +1,7 @@
 const Sign = require('../../models/signs/sign');
+const { Sequelize } = require('sequelize');
+const op =Sequelize.Op
+
 
 const transform = (records) => {
     return records.map((record) => {
@@ -14,9 +17,11 @@ const transform = (records) => {
 }
 
 const getAll = (req, res) => {
+    const id = req.query.id;
+    var condition = id ? { id:`${id}`} : null;
     console.log('signs getAll: ', req.body);
     try {
-        Sign.findAll()
+        Sign.findAll( {where:condition} )
         .then((result)=>{
             return res.status(200).send(transform(result));
         })
