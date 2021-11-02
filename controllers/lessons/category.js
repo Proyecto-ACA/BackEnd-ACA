@@ -1,5 +1,6 @@
 const Category = require('../../models/lessons/category');
-
+const { Sequelize } = require('sequelize');
+const op =Sequelize.Op
 const transform = (records) => {
     return records.map((record) => {
         return {
@@ -11,9 +12,11 @@ const transform = (records) => {
 }
 
 const getAll = (req, res) => {
+    const name = req.query.name;
+    var condition = name ? { name: { [op.iLike]: `%${name}%` } } : null;
     console.log('categorys getAll: ', req.body);
     try {
-        Category.findAll()
+        Category.findAll({ where: condition })
         .then((result)=>{
             return res.status(200).send(transform(result));
         })
