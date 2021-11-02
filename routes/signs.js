@@ -20,13 +20,22 @@ router.get(routes.signsGetOne, function(req, res, next) {
 
 
 router.post(routes.signsSave, function(req, res, next) {
-    let item = {
-        id: req.params.id,
-        name: req.params.name,
-        category_id: req.params.category_id,
-        sign: req.params.sign,
-        description: req.params.description,
-        image: req.params.image,
+    // let item = {
+    //     id: req.params.id,
+    //     name: req.params.name,
+    //     category_id: req.params.category_id,
+    //     sign: req.params.sign,
+    //     description: req.params.description,
+    //     image: req.params.image,
+    // }
+     //JSON
+     let item = {
+        id: req.body.id,
+        name: req.body.name,
+        category_id: req.body.category_id,
+        sign: req.body.sign,
+        description: req.body.description,
+        image: req.body.image,
     }
     console.log(item);
     console.log(req.body.Signs);
@@ -41,6 +50,7 @@ router.delete(routes.signsDelete, function(req, res, next) {
 });
 
 router.patch(routes.signsUpdate, function(req, res, next) {
+
     let item = {
         id: req.params.id,
         name: req.params.name,
