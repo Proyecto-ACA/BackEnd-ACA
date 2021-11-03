@@ -74,7 +74,9 @@ const save = (item, res) => {
 };
 
 const update = (item, res) => {
-    console.log('category update: ', item);
+    console.log("=====================================================================")
+    console.log('Category update: ', item);
+    console.log("=====================================================================")
     try {
         Category.update(item, { where: { id: item.id}})
         .then((result)=>{

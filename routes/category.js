@@ -38,10 +38,16 @@ router.delete(routes.categoryDelete, function(req, res, next) {
 });
 
 router.patch(routes.categoryUpdate, function(req, res, next) {
+    if(!req){
+        console.log("=====================================================================")
+        console.log(" ERROR al querer meter "+req.body.Cateory)
+        console.log("=====================================================================")
+
+    }
     let item = {
-        id: req.params.id,
-        category: req.params.category,
-        name: req.params.name,
+        id: req.body.id,
+        name: req.body.name,
+        image: req.body.image,
     }
     Category.update(item, res);
 });
