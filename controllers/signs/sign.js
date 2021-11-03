@@ -77,7 +77,10 @@ const save = (item, res) => {
 };
 
 const update = (item, res) => {
+    console.log("=====================================================================")
     console.log('sign update: ', item);
+    console.log("=====================================================================")
+
     try {
         Sign.update(item, { where: { id: item.id}})
         .then((result)=>{
