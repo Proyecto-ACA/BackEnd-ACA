@@ -18,7 +18,11 @@ const getAll = (req, res) => {
     var condition = name ? { name: { [op.iLike]: `%${name}%` } } : null;
     console.log('categorys getAll: ', req.body);
     try {
-        Category.findAll({ where: condition })
+        Category.findAll(
+        {
+            where:condition ,
+            order: [['name', 'ASC'],] 
+        })
         .then((result)=>{
             return res.status(200).send(transform(result));
         })

@@ -21,7 +21,11 @@ const getAll = (req, res) => {
     var condition = id ? { id:`${id}`} : null;
     console.log('signs getAll: ', req.body);
     try {
-        Sign.findAll( {where:condition} )
+        Sign.findAll( 
+        {
+            where:condition ,
+            order: [['name', 'ASC'],] 
+        })
         .then((result)=>{
             return res.status(200).send(transform(result));
         })
@@ -43,7 +47,11 @@ const getallbyCategory = (req, res) => {
     var condition = category_id ? { category_id:category_id} : null;
     console.log('signs getAll: ', req.body);
     try {
-        Sign.findAll( {where:condition} )
+        Sign.findAll( 
+        {
+            where:condition ,
+            order: [['name', 'ASC'],] 
+        })        
         .then((result)=>{
             return res.status(200).send(transform(result));
         })
