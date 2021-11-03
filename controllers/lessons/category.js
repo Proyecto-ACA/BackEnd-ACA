@@ -57,7 +57,33 @@ const getAllOrderbyId = (req, res) => {
     }
 };
 
-
+const getAllbyName = (req, res) => {
+    console.log("=====================================================================")
+    console.log('category get by Name: ', req.body);
+    console.log("=====================================================================")
+    const name = req.query.name;    
+    try {
+        Category.findAll( 
+        {
+            where:
+            {
+                name:{
+                [op.iLike]:`%${name}%` 
+                }
+            },
+            order: [['name', 'ASC'],] 
+        })        
+        .then((result)=>{
+            return res.status(200).send(transform(result));
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('signs: ', err.message);
+        return res.status(500).send(err);
+    }
+};
 
 const getOne = (req, res) => {
     const id = req.params.id;
@@ -156,6 +182,7 @@ const deleteItem = (item, res) => {
 
 module.exports = {
     getAll: getAll,
+    getAllbyName:getAllbyName,
     getAllOrderbyId:getAllOrderbyId,
     getOne: getOne,
     save: save,
