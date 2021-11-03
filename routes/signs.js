@@ -6,6 +6,7 @@ const routes = {
     signsGetAll: '/signs/getAll',
     signsGetOne: '/signs/getOne/:id',
     signsGetbyCategory:'/signs/getCategory',
+    signsGetbyName:'/signs/getbyName',
     signsGetAllId:'/signs/getAllId',
     signsSave: '/signs/save',
     signsUpdate: '/signs/update',
@@ -18,6 +19,10 @@ router.get(routes.signsGetAll, function(req, res, next) {
 
 router.get(routes.signsGetbyCategory, function(req, res, next) {
     Signs.getallbyCategory(req, res);
+});
+
+router.get(routes.signsGetbyName, function(req, res, next) {
+    Signs.getAllbyName(req, res);
 });
 
 router.get(routes.signsGetAllId, function(req, res, next) {
