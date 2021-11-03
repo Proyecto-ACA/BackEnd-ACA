@@ -21,7 +21,7 @@ const getAll = (req, res) => {
         Category.findAll(
         {
             where:condition ,
-            order: [['name', 'ASC'],] 
+            order: [['name', 'ASC']] 
         })
         .then((result)=>{
             return res.status(200).send(transform(result));
@@ -34,6 +34,31 @@ const getAll = (req, res) => {
         return res.status(500).send(err);
     }
 };
+
+const getAllOrderbyId = (req, res) => {
+    const name = req.query.name;
+    var condition = name ? { name: { [op.iLike]: `%${name}%` } } : null;
+    console.log('categorys getAll: ', req.body);
+    try {
+        Category.findAll(
+        {
+            where:condition ,
+            order: [['id', 'ASC']] 
+        })
+        .then((result)=>{
+            return res.status(200).send(transform(result));
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('categorys: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
+
+
 const getOne = (req, res) => {
     const id = req.params.id;
     console.log('categorys getOne: ', id);
@@ -131,6 +156,7 @@ const deleteItem = (item, res) => {
 
 module.exports = {
     getAll: getAll,
+    getAllOrderbyId:getAllOrderbyId,
     getOne: getOne,
     save: save,
     update: update,
