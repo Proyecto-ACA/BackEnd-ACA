@@ -101,10 +101,12 @@ const update = (item, res) => {
     }
 };
 
-const deleteItem = (item, res) => {
-    console.log('sign update: ', item);
+const deleteItem = (req, res) => {
+    const id = req.query.id;
+    var condition = id ? { id:`${id}`} : null;
+    console.log('sign delete: ', req.id);
     try {
-        Sign.destroy({ where: { id: item.id}})
+        Sign.destroy({ where:condition})
         .then((result)=>{
             return res.status(200).json({
                 success: true,

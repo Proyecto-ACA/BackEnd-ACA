@@ -6,8 +6,8 @@ const routes = {
     signsGetAll: '/signs/getAll',
     signsGetOne: '/signs/getOne/:id',
     signsSave: '/signs/save',
-    signsDelete: '/signs/delete',
     signsUpdate: '/signs/update',
+    signsDelete: '/signs/delete',
 }
 
 router.get(routes.signsGetAll, function(req, res, next) {
@@ -20,7 +20,6 @@ router.get(routes.signsGetOne, function(req, res, next) {
 
 
 router.post(routes.signsSave, function(req, res, next) {
-
     if(!req){
         console.log("=====================================================================")
         console.log(" ERROR al querer meter "+req.name)
@@ -47,20 +46,18 @@ router.post(routes.signsSave, function(req, res, next) {
     console.log("=====================================================================")
     // console.log(item);
     console.log(req.body.Signs);
-    Signs.save(item, res);
     console.log("=====================================================================")
+    Signs.save(item, res);
 
-});
-
-router.delete(routes.signsDelete, function(req, res, next) {
-    let item = {
-        id: req.params.id,
-    }
-    Signs.delete(item, res);
 });
 
 router.patch(routes.signsUpdate, function(req, res, next) {
+    if(!req){
+        console.log("=====================================================================")
+        console.log(" ERROR al querer meter "+req.body.Signs)
+        console.log("=====================================================================")
 
+    }
     let item = {
         id: req.params.id,
         name: req.params.name,
@@ -70,6 +67,10 @@ router.patch(routes.signsUpdate, function(req, res, next) {
         image: req.params.image,
     }
     Signs.update(item, res);
+});
+
+router.delete(routes.signsDelete, function(req, res, next) {
+    Signs.deleteItem(req, res);
 });
 
 module.exports = router;
