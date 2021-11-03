@@ -20,7 +20,14 @@ router.get(routes.signsGetOne, function(req, res, next) {
 
 
 router.post(routes.signsSave, function(req, res, next) {
-    // let item = {
+
+    if(!req){
+        console.log("=====================================================================")
+        console.log(" ERROR al querer meter "+req.name)
+        console.log("=====================================================================")
+
+    }
+    //     let item = {
     //     id: req.params.id,
     //     name: req.params.name,
     //     category_id: req.params.category_id,
@@ -28,8 +35,8 @@ router.post(routes.signsSave, function(req, res, next) {
     //     description: req.params.description,
     //     image: req.params.image,
     // }
-     //JSON
-     let item = {
+    //  //JSON
+    let item = {
         id: req.body.id,
         name: req.body.name,
         category_id: req.body.category_id,
@@ -37,9 +44,12 @@ router.post(routes.signsSave, function(req, res, next) {
         description: req.body.description,
         image: req.body.image,
     }
-    console.log(item);
+    console.log("=====================================================================")
+    // console.log(item);
     console.log(req.body.Signs);
     Signs.save(item, res);
+    console.log("=====================================================================")
+
 });
 
 router.delete(routes.signsDelete, function(req, res, next) {
