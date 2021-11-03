@@ -5,6 +5,7 @@ const Signs = require('../controllers/signs/sign');
 const routes = {
     signsGetAll: '/signs/getAll',
     signsGetOne: '/signs/getOne/:id',
+    signsGetbyCategory:'/signs/getCategory',
     signsSave: '/signs/save',
     signsUpdate: '/signs/update',
     signsDelete: '/signs/delete',
@@ -13,6 +14,11 @@ const routes = {
 router.get(routes.signsGetAll, function(req, res, next) {
     Signs.getAll(req, res);
 });
+
+router.get(routes.signsGetbyCategory, function(req, res, next) {
+    Signs.getallbyCategory(req, res);
+});
+
 
 router.get(routes.signsGetOne, function(req, res, next) {
     Signs.getOne(req, res);

@@ -34,6 +34,28 @@ const getAll = (req, res) => {
     }
 };
 
+const getallbyCategory = (req, res) => {
+    console.log("=====================================================================")
+    console.log('sign get by category: ', req);
+    console.log("=====================================================================")
+
+    const category_id = req.query.category_id;
+    var condition = category_id ? { category_id:category_id} : null;
+    console.log('signs getAll: ', req.body);
+    try {
+        Sign.findAll( {where:condition} )
+        .then((result)=>{
+            return res.status(200).send(transform(result));
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('signs: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
 const getOne = (req, res) => {
     const id = req.params.id;
     console.log('signs getOne: ', id);
@@ -133,6 +155,7 @@ const deleteItem = (req, res) => {
 
 module.exports = {
     getAll: getAll,
+    getallbyCategory:getallbyCategory,
     getOne: getOne,
     save: save,
     update: update,
