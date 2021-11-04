@@ -16,6 +16,14 @@ const Lesson = sequelize.define('lessons', {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    image: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    description: {
+        type: DataTypes.STRING(500),
+        allowNull: false,
+    },
     level_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
