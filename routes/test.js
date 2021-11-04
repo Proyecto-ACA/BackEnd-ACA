@@ -17,6 +17,8 @@ const routes = {
 
     testGetAll: '/test/getAll',
     testGetByCategory: '/test/getByCategory',
+    testGetByDifficulty: '/test/getByDifficulty',
+    testGetByCategoryAndDifficulty: '/test/getByCategoryAndDifficulty',
     testSave: '/test/save',
     testDelete: '/test/delete',
     testUpdate: '/test/update',
@@ -87,6 +89,14 @@ router.get(routes.testGetAll, function(req, res, next) {
 
 router.get(routes.testGetByCategory, (req, res, next) => {
     Test.getByCategory(req.params.Category, res);
+});
+
+router.get(routes.testGetByDifficulty, (req, res, next) => {
+    Test.getByCategory(req.params.difficulty, res);
+});
+
+router.get(routes.testGetByCategoryAndDifficulty, (req, res, next) => {
+    Test.getByCategory(req.params.category ,req.params.difficulty, res);
 });
 
 router.post(routes.testSave, function(req, res, next) {

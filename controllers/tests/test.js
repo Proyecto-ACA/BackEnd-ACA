@@ -54,6 +54,28 @@ const getByCategory = (category_id, res) => {
     }
 };
 
+const getByDifficulty = (difficulty_id, res) => {
+    console.log('Test getAll: ', req.body);
+    try {
+        Test.findAll({
+            where: { difficulty_id: difficulty_id},
+            include: [
+                { model: Difficulty, as: 'difficulty'},
+                { model: Category, as: 'category'},
+            ],
+        })
+        .then((result)=>{
+            return res.status(200).send(transform(result));
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('Test getAll: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
 const save = (item, res) => {
     console.log('Test save: ', item);
     try {
@@ -135,4 +157,6 @@ module.exports = {
     update: update,
     deleteItem: deleteItem,
     getByCategory: getByCategory,
+    getByDifficulty: getByDifficulty,
+    getByCategoryAndDifficulty: getByCategoryAndDifficulty,
 };

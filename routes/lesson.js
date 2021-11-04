@@ -19,6 +19,7 @@ const routes = {
     lessonGetAll: '/lesson/getAll',
     lessonGetByCategory: '/lesson/getByCategory',
     lessonGetByDifficulty: '/lesson/getByDifficulty',
+    lessonGetByCategoryAndDifficulty: '/lesson/getByCategoryAndDifficulty',
     lessonSave: '/lesson/save',
     lessonDelete: '/lesson/delete',
     lessonUpdate: '/lesson/update',
@@ -98,6 +99,10 @@ router.get(routes.lessonGetAll, (req, res, next) => {
 
 router.get(routes.lessonGetByCategory, (req, res, next) => {
     Lesson.getByCategory(req.params.Category, res);
+});
+
+router.get(routes.lessonGetByCategoryAndDifficulty, (req, res, next) => {
+    Lesson.getByCategory(req.params.Category, req.params.difficulty, res);
 });
 
 router.get(routes.lessonGetByDifficulty, (req, res, next) => {
