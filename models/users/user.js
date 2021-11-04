@@ -17,6 +17,10 @@ const User = sequelize.define('users', {
     rol_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
+    },
+    password: {
+        allowNull: false,
+        type: DataTypes.STRING
     }
 }, { timestamps: false });
 
