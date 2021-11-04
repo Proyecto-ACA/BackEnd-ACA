@@ -107,6 +107,8 @@ router.get(routes.lessonGetByDifficulty, (req, res, next) => {
 router.post(routes.lessonSave, (req, res, next) => {
     let item = {
         name: req.params.name,
+        image: req.params.image,
+        description: req.body.description,
         level_id: req.params.level,
         category_id: req.params.category,
     }
@@ -126,6 +128,8 @@ router.patch(routes.lessonUpdate, (req, res, next) => {
     let item = {
         id: req.params.id,
         name: req.params.name,
+        image: req.params.image,
+        description: req.body.description,
         level_id: req.params.level,
         category_id: req.params.category,
     }
