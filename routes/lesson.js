@@ -19,7 +19,7 @@ const routes = {
     lessonGetAll: '/lesson/getAll',
     lessonGetByCategory: '/lesson/getByCategory',
     lessonGetByDifficulty: '/lesson/getByDifficulty',
-    lessonGetByCategoryAndDifficulty: '/lesson/getByDifficultyAndCategory',
+    lessonGetByCategoryAndDifficulty: '/lesson/getByCategoryAndDifficulty',
     lessonSave: '/lesson/save',
     lessonDelete: '/lesson/delete',
     lessonUpdate: '/lesson/update',

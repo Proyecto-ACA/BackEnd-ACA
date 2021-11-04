@@ -158,4 +158,5 @@ module.exports = {
     deleteItem: deleteItem,
     getByCategory: getByCategory,
     getByDifficulty: getByDifficulty,
+    getByCategoryAndDifficulty: getByCategoryAndDifficulty,
 };
