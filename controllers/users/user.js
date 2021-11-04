@@ -25,6 +25,65 @@ const getAll = (req, res) => {
     }
 };
 
+const findUser = (item, res) => {
+    console.log('User save: ', item);
+    try {
+        User.findOne({
+            where: {
+                name: item.name
+            }
+        })
+        .then((result)=>{
+            return res.status(200).json({
+                success: true,
+                data: result,
+            });
+        })
+        .catch((e)=>{
+            return res.status(400).json({
+                success: false,
+                error: e,
+            });
+        });
+    } catch (err) {
+        console.log('User save: ', err.message);
+        return res.status(500).json({
+            success: false,
+            error: err,
+        });
+    }
+};
+
+const findId = (item, res) => {
+    console.log('User save: ', item);
+    try {
+        User.findOne({
+            where: {
+                id: item.id
+            }
+        })
+        .then((result)=>{
+            return res.status(200).json({
+                success: true,
+                data: result,
+            });
+        })
+        .catch((e)=>{
+            return res.status(400).json({
+                success: false,
+                error: e,
+            });
+        });
+    } catch (err) {
+        console.log('User save: ', err.message);
+        return res.status(500).json({
+            success: false,
+            error: err,
+        });
+    }
+};
+
+
 const save = (item, res) => {
     console.log('User save: ', item);
     try {
@@ -103,6 +162,8 @@ const deleteItem = (item, res) => {
 module.exports = {
     getAll: getAll,
     save: save,
+    findUser: findUser,
+    findId: findId,
     update: update,
     deleteItem: deleteItem,
 };

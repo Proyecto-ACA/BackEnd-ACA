@@ -2,25 +2,19 @@ INSERT INTO categorys(name,image)
 VALUES ('Abecedario','https://cdn-icons-png.flaticon.com/512/196/196467.png');
 
 INSERT INTO categorys(name,image)
-VALUES ('Alimentos','https://cdn-icons-png.flaticon.com/512/1147/1147832.png');
-
-INSERT INTO categorys(name,image)
-VALUES ('Calendario','https://cdn-icons-png.flaticon.com/512/425/425868.png');
+VALUES ('Familia','https://cdn-icons-png.flaticon.com/512/547/547612.png');
 
 INSERT INTO categorys(name,image)
 VALUES ('Comunes','https://cdn-icons-png.flaticon.com/512/1588/1588163.png');
 
 INSERT INTO categorys(name,image)
+VALUES ('Alimentos','https://cdn-icons-png.flaticon.com/512/1147/1147832.png');
+
+INSERT INTO categorys(name,image)
+VALUES ('Vestimenta','https://cdn-icons-png.flaticon.com/512/2132/2132385.png');
+
+INSERT INTO categorys(name,image)
 VALUES ('Colores','https://cdn-icons-png.flaticon.com/512/1831/1831908.png');
-
-INSERT INTO categorys(name,image)
-VALUES ('Familia','https://cdn-icons-png.flaticon.com/512/547/547612.png');
-
-INSERT INTO categorys(name,image)
-VALUES ('Numeros','https://cdn-icons-png.flaticon.com/512/1519/1519458.png');
-
-INSERT INTO categorys(name,image)
-VALUES ('Ocupaciones','https://cdn-icons-png.flaticon.com/512/1670/1670457.png');
 
 INSERT INTO categorys(name,image)
 VALUES ('Saludos','https://cdn-icons-png.flaticon.com/512/2278/2278923.png');
@@ -29,7 +23,15 @@ INSERT INTO categorys(name,image)
 VALUES ('Verbos','https://cdn-icons-png.flaticon.com/512/2548/2548513.png');
 
 INSERT INTO categorys(name,image)
-VALUES ('Vestimenta','https://cdn-icons-png.flaticon.com/512/2132/2132385.png');
+VALUES ('Ocupaciones','https://cdn-icons-png.flaticon.com/512/1670/1670457.png');
+
+INSERT INTO categorys(name,image)
+VALUES ('Numeros','https://cdn-icons-png.flaticon.com/512/1519/1519458.png');
+
+INSERT INTO categorys(name,image)
+VALUES ('Calendario','https://cdn-icons-png.flaticon.com/512/425/425868.png');
+
+
 
 ---------- Abecedario
 
@@ -418,3 +420,18 @@ VALUES ('Sabado',11,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.app
 
 INSERT INTO signs(name, category_id, sign, description, image)
 VALUES ('Domingo',11,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_domingo.gif?alt=media&token=0693041b-4158-483b-9dbc-a41c58e6b852','Septimo día de la semana civil, quinto de la litúrgica.','https://3.bp.blogspot.com/-JbpK_LzIGR8/WJzNs8-FUvI/AAAAAAAAAik/ofKABQ4udScfZ55x97yK5Z1RmXiZmrvogCLcB/s1600/misterio%2Bde%2Blos%2Bsiete%2Bd%25C3%25ADas%2Bde%2Bla%2Bsemana.jpg');
+
+
+
+
+INSERT INTO rols(
+	name)
+	VALUES ('admin');
+	
+INSERT INTO rols(
+	name)
+	VALUES ('alumno');
+	
+INSERT INTO users(
+	name, rol_id, password)
+	VALUES ('admin', '1', '$2a$10$MjmJo4NI9WZgoxunBkNeOeCYI8Lkd7k8r71lK.mx5H780cVqtAo42');
