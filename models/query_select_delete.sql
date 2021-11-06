@@ -9,6 +9,8 @@ DROP TABLE lessons;
 DROP TABLE lesson_levels;
 DROP TABLE signs;
 DROP TABLE categorys;
+DROP TABLE users;
+DROP TABLE rols;
 */
 /*
 SELECT * FROM tests;
