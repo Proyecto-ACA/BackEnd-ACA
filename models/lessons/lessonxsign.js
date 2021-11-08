@@ -19,6 +19,10 @@ const LessonXSign = sequelize.define('lesson_x_sign', {
         type: Sequelize.INTEGER,
         allowNull: false,
     },
+    type: {
+        type: Sequelize.INTEGER, 
+        allowNull: false,
+    },
 }, { timestamps: false });
 
 LessonXSign.belongsTo(Lesson, { as: 'lesson',foreignKey: 'lesson_id' });

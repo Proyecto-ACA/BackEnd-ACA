@@ -30,6 +30,10 @@ const Sign = sequelize.define('signs', {
         type: DataTypes.STRING(500),
         allowNull: false,
     },
+    active: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+    },
 }, { timestamps: false });
 
 Sign.belongsTo(Category, { as: 'category',foreignKey: 'category_id' });

@@ -149,6 +149,7 @@ router.post(routes.lessonsignSave, (req, res, next) => {
     let item = {
         lesson_id: req.params.lesson,
         sign_id: req.params.sign,
+        type: req.params.type
     }
     console.log(item);
     console.log(req.body.level);
@@ -167,6 +168,7 @@ router.patch(routes.lessonsignUpdate, (req, res, next) => {
         id: req.params.id,
         lesson_id: req.params.lesson,
         sign_id: req.params.sign,
+        type: req.params.type
     }
     LessonSign.update(item, res);
 });
