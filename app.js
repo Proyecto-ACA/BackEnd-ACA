@@ -16,6 +16,7 @@ const testRouter = require('./routes/test');
 // DB
 const category = require('./routes/category');
 const signs = require('./routes/signs');
+const lessonRouter = require('./routes/lesson');
 
 
 
@@ -66,6 +67,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/', usersRouter);
 app.use('/test', testRouter);
+app.use('/lesson', lessonRouter);
 // DB
 app.use('/', category);
 app.use('/', signs);
