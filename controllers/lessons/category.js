@@ -1,17 +1,7 @@
 const Category = require('../../models/lessons/category');
 const { Sequelize } = require('sequelize');
 const op =Sequelize.Op
-
-
-const transform = (records) => {
-    return records.map((record) => {
-        return {
-            id: record.id,
-            name: record.name,
-            image: record.image,
-        }
-    });
-}
+const transform = require('../transforms/category');
 
 const getAll = (req, res) => {
     const name = req.query.name;
