@@ -1,16 +1,21 @@
 const LessonXSign = require('../../models/lessons/lessonxsign');
 const Lesson = require('../../models/lessons/lesson');
 const Sign = require('../../models/signs/sign');
+const SignTransform = require('../transforms/signs');
+const LessonTransform = require('../transforms/lesson');
 const transform = (records) => {
     return records.map((record) => {
+        //const sign = SignTransform(record.sign);
         return {
             id: record.id,
             name: record.name,
             type: record.type,
-            lesson: {
+            lesson: LessonTransform.casteo(record.lesson),
+            /*lesson: {
                 name: record.lesson.name,
                 description: record.lesson.description,
-            }
+            },*/
+            sign: SignTransform.casteo(record.sign),
         }
     });
 }
@@ -20,10 +25,8 @@ const getAll = (req, res) => {
     try {
         LessonXSign.findAll({
             include: [
-                { 
-                    model: Sign , as: 'sign',
-                    model: Lesson , as: 'lesson',
-                },
+                { model: Sign , as: 'sign' },
+                { model: Lesson , as: 'lesson' },
             ],
         })
         .then((result)=>{

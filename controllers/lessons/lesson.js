@@ -1,22 +1,13 @@
 const Lesson = require('../../models/lessons/lesson');
 
-const transform = (records) => {
-    return records.map((record) => {
-        return {
-            id: record.id,
-            name: record.name,
-            image: record.image,
-            description: record.description
-        }
-    });
-}
+const transform = require('../transforms/lesson');
 
 const getAll = (req, res) => {
     console.log('lesson getAll: ', req.body);
     try {
         Lesson.findAll()
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);
@@ -34,7 +25,7 @@ const getByCategory = (category_id, res) => {
             where: { category_id: category_id}
         })
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);
@@ -52,7 +43,7 @@ const getByDifficulty = (difficulty_id, res) => {
             where: { difficulty_id: difficulty_id}
         })
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);
@@ -70,7 +61,7 @@ const getByCategoryAndDifficulty = (category_id, difficulty_id, res) => {
             where: { difficulty_id: difficulty_id, category_id: category_id }
         })
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);
