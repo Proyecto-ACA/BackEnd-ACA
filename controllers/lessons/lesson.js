@@ -5,6 +5,8 @@ const transform = (records) => {
         return {
             id: record.id,
             name: record.name,
+            image: record.image,
+            description: record.description
         }
     });
 }

@@ -39,6 +39,30 @@ const getAll = (req, res) => {
     }
 };
 
+const getById = (item, res) => {
+    try {
+        LessonXSign.findAll({
+            where: { lesson_id: item.lesson },
+            include: [
+                { 
+                    model: Sign , as: 'sign',
+                    model: Lesson , as: 'lesson',
+                },
+            ],
+        })
+        .then((result)=>{
+            console.log('Lessons:', result);
+            return res.status(200).send(transform(result));
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('LessonXSign getAll: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
 const save = (item, res) => {
     console.log('LessonXSign save: ', item);
     try {
@@ -119,4 +143,5 @@ module.exports = {
     save: save,
     update: update,
     deleteItem: deleteItem,
+    getById: getById,
 };
