@@ -1,11 +1,16 @@
 const LessonXSign = require('../../models/lessons/lessonXSign');
-
+const Lesson = require('../../models/lessons/lesson');
+const Sign = require('../../models/signs/sign');
 const transform = (records) => {
     return records.map((record) => {
         return {
             id: record.id,
             name: record.name,
             type: record.type,
+            lesson: {
+                name: record.lesson.name,
+                description: record.lesson.description,
+            }
         }
     });
 }
@@ -13,8 +18,16 @@ const transform = (records) => {
 const getAll = (req, res) => {
     console.log('LessonXSign getAll: ', req.body);
     try {
-        LessonXSign.findAll()
+        LessonXSign.findAll({
+            include: [
+                { 
+                    model: Sign , as: 'sign',
+                    model: Lesson , as: 'lesson',
+                },
+            ],
+        })
         .then((result)=>{
+            console.log('Lessons:', result);
             return res.status(200).send(transform(result));
         })
         .catch((e)=>{

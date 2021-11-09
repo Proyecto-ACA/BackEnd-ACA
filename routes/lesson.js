@@ -142,6 +142,7 @@ router.patch(routes.lessonUpdate, (req, res, next) => {
 });
 
 router.get(routes.lessonsignGetAll, (req, res, next) => {
+    console.log('testsign get all');
     LessonSign.getAll(req, res);
 });
 
