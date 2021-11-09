@@ -11,10 +11,6 @@ const transform = (records) => {
             name: record.name,
             type: record.type,
             lesson: LessonTransform.casteo(record.lesson),
-            /*lesson: {
-                name: record.lesson.name,
-                description: record.lesson.description,
-            },*/
             sign: SignTransform.casteo(record.sign),
         }
     });
