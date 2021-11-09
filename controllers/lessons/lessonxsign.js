@@ -1,4 +1,4 @@
-const LessonXSign = require('../../models/lessons/lessonXSign');
+const LessonXSign = require('../../models/lessons/lessonxsign');
 const Lesson = require('../../models/lessons/lesson');
 const Sign = require('../../models/signs/sign');
 const transform = (records) => {
@@ -19,6 +19,30 @@ const getAll = (req, res) => {
     console.log('LessonXSign getAll: ', req.body);
     try {
         LessonXSign.findAll({
+            include: [
+                { 
+                    model: Sign , as: 'sign',
+                    model: Lesson , as: 'lesson',
+                },
+            ],
+        })
+        .then((result)=>{
+            console.log('Lessons:', result);
+            return res.status(200).send(transform(result));
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('LessonXSign getAll: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
+const getById = (item, res) => {
+    try {
+        LessonXSign.findAll({
+            where: { lesson_id: item.lesson },
             include: [
                 { 
                     model: Sign , as: 'sign',
@@ -119,4 +143,5 @@ module.exports = {
     save: save,
     update: update,
     deleteItem: deleteItem,
+    getById: getById,
 };

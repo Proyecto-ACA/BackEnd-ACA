@@ -25,6 +25,7 @@ const routes = {
     lessonUpdate: '/lesson/update',
 
     lessonsignGetAll: '/lessonsign/getAll',
+    lessonsignGetById: '/lessonsign/get',
     lessonsignSave: '/lessonsign/save',
     lessonsignDelete: '/lessonsign/delete',
     lessonsignUpdate: '/lessonsign/update',
@@ -144,6 +145,11 @@ router.patch(routes.lessonUpdate, (req, res, next) => {
 router.get(routes.lessonsignGetAll, (req, res, next) => {
     console.log('testsign get all');
     LessonSign.getAll(req, res);
+});
+
+router.get(routes.lessonsignGetById, (req, res, next) => {
+    console.log('testsign get by id');
+    LessonSign.getAll({ lesson: req.params.lesson}, res);
 });
 
 router.post(routes.lessonsignSave, (req, res, next) => {
