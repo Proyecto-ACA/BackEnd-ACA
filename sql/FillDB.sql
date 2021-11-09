@@ -231,7 +231,7 @@ INSERT INTO signs( active, name, category_id, sign, description, image)
 VALUES (true, 'Pupusas',4,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_pupusas.gif?alt=media&token=b154b905-c425-4587-83af-9ba1e530817d','La pupusa es una tortilla gruesa a base de masa de maíz o de arroz rellena con uno o más ingredientes, como queso, chicharrón, ayote, frijoles refritos, loroco, etc.','https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Pupusas_El_Salvador_Centro_America.JPG/1200px-Pupusas_El_Salvador_Centro_America.JPG');
 
 INSERT INTO signs( active, name, category_id, sign, description, image)
-VALUES (true, 'Soda',4,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_soda.gif?alt=media&token=d7184ccb-97bd-4749-9959-03ddb78f8294','https://uproxx.com/wp-content/uploads/2017/03/sodas.jpg');
+VALUES (true, 'Soda',4,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_soda.gif?alt=media&token=d7184ccb-97bd-4749-9959-03ddb78f8294','Bebida gaseosa, transparente y sin alcohol, elaborada con agua y ácido carbónico; suele tomarse sola o combinada con bebidas alcohólicas y puede estar envasada en un sifón.','https://uproxx.com/wp-content/uploads/2017/03/sodas.jpg');
 
 INSERT INTO signs( active, name, category_id, sign, description, image)
 VALUES (true, 'Sopa',4,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_sopa.gif?alt=media&token=db691ef3-be15-48ef-9ed0-d027ccd6541f','Alimento líquido que se prepara con uno o más ingredientes triturados que normalmente se cuecen o se rebajan en agua.','https://okdiario.com/img/2018/09/29/sopa-de-fideos-con-pollo.jpg');
