@@ -16,6 +16,10 @@ router.post('/users/user', function(req, res, next) {
   User.findUser(item, res);
 });
 
+router.get('/users/getAll', function(req, res, next) {
+  User.getAll(req, res);
+});
+
 router.post('/users/userid', function(req, res, next) {
   console.log(req.body)
   let item = {
