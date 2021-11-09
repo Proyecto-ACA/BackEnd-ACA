@@ -27,5 +27,25 @@ router.post('/users/userid', function(req, res, next) {
   }
   User.findId(item, res);
 });
+router.post('/users/save', function(req, res, next) {
+  if(!req){
+      console.log("=====================================================================")
+      console.log(" ERROR al querer meter "+req.name)
+      console.log("=====================================================================")
+
+  }
+  let item = {
+      id: req.body.id,
+      name: req.body.name,
+      rol_id: req.body.rol_id,
+      password:req.body.password
+  }
+  console.log("=====================================================================")
+  // console.log(item);
+  console.log(req.body.Signs);
+  console.log("=====================================================================")
+  Signs.save(item, res);
+
+});
 
 module.exports = router;
