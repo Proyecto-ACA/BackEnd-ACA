@@ -1,4 +1,4 @@
-const LessonXSign = require('../../models/lessons/lessonXSign');
+const LessonXSign = require('../../models/lessons/lessonxsign');
 const Lesson = require('../../models/lessons/lesson');
 const Sign = require('../../models/signs/sign');
 const transform = (records) => {
