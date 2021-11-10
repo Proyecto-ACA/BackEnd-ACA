@@ -9,7 +9,7 @@ const transform = (records) => {
         return {
             id: record.id,
             type: record.type,
-            lesson: LessonTransform.casteo(record.lesson),
+            //lesson: LessonTransform.casteo(record.lesson),
             sign: SignTransform.casteo(record.sign),
         }
     });
@@ -39,25 +39,26 @@ const getAll = (req, res) => {
 };
 
 const getById = (item, res) => {
+    console.log(item);
     try {
         LessonXSign.findAll({
             where: { lesson_id: item.lesson },
             include: [
-                { 
-                    model: Sign , as: 'sign',
-                    model: Lesson , as: 'lesson',
-                },
+                { model: Sign , as: 'sign' },
+                { model: Lesson , as: 'lesson' },
             ],
         })
         .then((result)=>{
-            console.log('Lessons:', result);
+            //console.log('Lessons:', result);
+            console.log('get by id', result);
             return res.status(200).send(transform(result));
         })
         .catch((e)=>{
+            console.log(e)
             return res.status(400).send(e);
         })  ;
     } catch (err) {
-        console.log('LessonXSign getAll: ', err.message);
+        console.log('LessonXSign get by id error: ', err.message);
         return res.status(500).send(err);
     }
 };
