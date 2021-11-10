@@ -5,6 +5,7 @@ const transform = (records) => {
         return {
             id: record.id,
             name: record.name,
+            category: record.category
         }
     });
 }

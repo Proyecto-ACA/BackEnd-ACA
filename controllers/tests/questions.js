@@ -4,7 +4,8 @@ const transform = (records) => {
     return records.map((record) => {
         return {
             id: record.id,
-            name: record.name,
+            statement: record.statement,
+            sign_id: record.sign_id,
         }
     });
 }
