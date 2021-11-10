@@ -5,6 +5,7 @@ const transform = (records) => {
         return {
             id: record.id,
             name: record.name,
+            rol_id:record.rol_id
         }
     });
 }
@@ -21,6 +22,23 @@ const getAll = (req, res) => {
         })  ;
     } catch (err) {
         console.log('users: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
+const getOne = (req, res) => {
+    const id = req.params.id;
+    console.log('Users getOne: ', id);
+    try {
+        User.findByPk(id)
+        .then((result)=>{
+            return res.status(200).send(result);
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('signs: ', err.message);
         return res.status(500).send(err);
     }
 };
@@ -162,6 +180,7 @@ const deleteItem = (item, res) => {
 module.exports = {
     getAll: getAll,
     save: save,
+    getOne:getOne,
     findUser: findUser,
     findId: findId,
     update: update,
