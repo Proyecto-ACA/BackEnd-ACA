@@ -27,10 +27,15 @@ router.post('/users/userid', function(req, res, next) {
   }
   User.findId(item, res);
 });
+
 router.post('/users/save', function(req, res, next) {
   if(!req){
       console.log("=====================================================================")
       console.log(" ERROR al querer meter "+req.name)
+      console.log(req.body.id);
+      console.log(req.body.name);
+      console.log(req.body.rol_id);
+      console.log(req.body.password);
       console.log("=====================================================================")
 
   }
@@ -42,9 +47,12 @@ router.post('/users/save', function(req, res, next) {
   }
   console.log("=====================================================================")
   // console.log(item);
-  console.log(req.body.Signs);
+  console.log(req.body.id);
+  console.log(req.body.name);
+  console.log(req.body.rol_id);
+  console.log(req.body.password);
   console.log("=====================================================================")
-  Signs.save(item, res);
+  User.save(item, res);
 
 });
 
