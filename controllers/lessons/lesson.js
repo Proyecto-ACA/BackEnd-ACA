@@ -1,5 +1,5 @@
 const Lesson = require('../../models/lessons/lesson');
-const LessonXSign = require('../../models/lessons/lessonXSign')
+const LessonXSign = require('../../models/lessons/lessonxsign')
 
 const transform = require('../transforms/lesson');
 

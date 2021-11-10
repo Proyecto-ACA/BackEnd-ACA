@@ -434,7 +434,7 @@ INSERT INTO rols(
 
 INSERT INTO users(
 	name, rol_id, password)
-	VALUES ('admin', '1', '$2a$10$MjmJo4NI9WZgoxunBkNeOeCYI8Lkd7k8r71lK.mx5H780cVqtAo42');
+	VALUES ('admin', 1, '$2a$10$MjmJo4NI9WZgoxunBkNeOeCYI8Lkd7k8r71lK.mx5H780cVqtAo42');
 
 
 INSERT INTO test_categorys (category, name) VALUES (1, 'Falso o Verdadero');
