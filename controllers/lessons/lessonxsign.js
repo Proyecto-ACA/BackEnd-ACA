@@ -8,7 +8,6 @@ const transform = (records) => {
         //const sign = SignTransform(record.sign);
         return {
             id: record.id,
-            name: record.name,
             type: record.type,
             lesson: LessonTransform.casteo(record.lesson),
             sign: SignTransform.casteo(record.sign),
@@ -24,6 +23,7 @@ const getAll = (req, res) => {
                 { model: Sign , as: 'sign' },
                 { model: Lesson , as: 'lesson' },
             ],
+            //group: 'lesson_x_sign.id'
         })
         .then((result)=>{
             console.log('Lessons:', result);

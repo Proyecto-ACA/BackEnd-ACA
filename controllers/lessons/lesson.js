@@ -1,11 +1,17 @@
 const Lesson = require('../../models/lessons/lesson');
+const LessonXSign = require('../../models/lessons/lessonXSign')
 
 const transform = require('../transforms/lesson');
 
 const getAll = (req, res) => {
     console.log('lesson getAll: ', req.body);
     try {
-        Lesson.findAll()
+        Lesson.findAll({
+            include: [
+                //{ model: LessonXSign , as: 'lessons'},
+            ],
+            //group: 'lessons.id',
+        })
         .then((result)=>{
             return res.status(200).send(transform.transform(result));
         })

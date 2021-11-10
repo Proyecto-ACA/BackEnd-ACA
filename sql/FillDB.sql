@@ -452,3 +452,7 @@ INSERT INTO lessons (name, image, description, level_id, category_id)
     VALUES ('leccion 1 - 23', 'https://drive.google.com/file/d/1ceoOJwI5YEKwAUSZPDcffjL4NVyajIz8/view?usp=sharing','tu primera leccion ;v',1,1);
 
 INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 1, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 2, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 3, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 4, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 5, 2);
