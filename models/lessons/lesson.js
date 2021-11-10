@@ -34,8 +34,8 @@ const Lesson = sequelize.define('lessons', {
     },
 }, { timestamps: false });
 
-Lesson.belongsTo(Level, { as: 'level',foreignKey: 'level_id' });
-Lesson.belongsTo(Category, { as: 'category',foreignKey: 'category_id' });
+Lesson.belongsTo(Level, { as: 'level',sourceKey: 'level_id' });
+Lesson.belongsTo(Category, { as: 'category',sourceKey: 'category_id' });
 
 module.exports = Lesson;
 
