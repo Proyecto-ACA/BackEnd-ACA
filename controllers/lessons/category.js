@@ -148,10 +148,10 @@ const update = (item, res) => {
 const deleteItem = (req, res) => {
     const id = req.query.id;
     var condition = id ? { id:`${id}`} : null;
-    console.log('categoria delete: ', req.id);
     try {
         Category.destroy({ where:condition})
         .then((result)=>{
+            console.log('Category delete: ', req.id);
             return res.status(200).json({
                 success: true,
                 data: result,
@@ -164,7 +164,7 @@ const deleteItem = (req, res) => {
             });
         });
     } catch (err) {
-        console.log('sign delete: ', err.message);
+        console.log('Category delete: ', err.message);
         return res.status(500).json({
             success: false,
             error: err,

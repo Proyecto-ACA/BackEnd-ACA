@@ -41,7 +41,7 @@ router.post(routes.categorySave, function(req, res, next) {
 });
 
 router.delete(routes.categoryDelete, function(req, res, next) {
-    Category.deleteItem(item, res);
+    Category.deleteItem(req, res);
 });
 
 router.patch(routes.categoryUpdate, function(req, res, next) {
