@@ -451,7 +451,13 @@ INSERT INTO lesson_levels (level, name) VALUES (3, 'dificil');
 INSERT INTO lesson_levels (level, name) VALUES (4, 'infierno');
 
 INSERT INTO lessons (name, image, description, level_id, category_id)
-    VALUES ('leccion 1 - 23', 'https://drive.google.com/file/d/1ceoOJwI5YEKwAUSZPDcffjL4NVyajIz8/view?usp=sharing','tu primera leccion ;v',1,1);
+    VALUES ('leccion 1 - 23', 'https://cdn-icons-png.flaticon.com/512/547/547612.png','tu primera leccion ;v',1,1);
+INSERT INTO lessons (name, image, description, level_id, category_id)
+    VALUES ('leccion 2 - 23', 'https://cdn-icons-png.flaticon.com/512/547/547612.png','tu primera leccion ;v',1,1);
+INSERT INTO lessons (name, image, description, level_id, category_id)
+    VALUES ('leccion 3 - 23', 'https://cdn-icons-png.flaticon.com/512/547/547612.png','tu primera leccion ;v',1,1);
+INSERT INTO lessons (name, image, description, level_id, category_id)
+    VALUES ('leccion 4 - 23', 'https://cdn-icons-png.flaticon.com/512/547/547612.png','tu primera leccion ;v',1,1);
 
 INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 1, 1);
 INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 2, 1);
