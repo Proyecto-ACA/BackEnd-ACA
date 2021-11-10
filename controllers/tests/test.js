@@ -1,17 +1,7 @@
 const Test = require('../../models/test/test');
 const Difficulty = require('../../models/test/difficulty');
 const Category = require('../../models/test/category');
-
-const transform = (records) => {
-    return records.map((record) => {
-        return {
-            id: record.id,
-            name: record.name,
-            difficulty_id: record.difficulty_id,
-            category_id: record.category_id
-        }
-    });
-}
+const transform = require('./transformTest');
 
 const getAll = (req, res) => {
     console.log('Test getAll: ', req.body);
@@ -23,7 +13,7 @@ const getAll = (req, res) => {
             ],
         })
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);
@@ -45,7 +35,7 @@ const getByCategory = (category_id, res) => {
             ],
         })
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);
@@ -67,7 +57,7 @@ const getByDifficulty = (difficulty_id, res) => {
             ],
         })
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);
