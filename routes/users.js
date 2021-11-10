@@ -25,10 +25,7 @@ router.get('/users/getOne/:id', function(req, res, next) {
 });
 
 router.delete('/users/delete', function(req, res, next) {
-  let item = {
-      id: req.params.id,
-  }
-  User.delete(item, res);
+  User.deleteItem(req, res);
 });
 
 
