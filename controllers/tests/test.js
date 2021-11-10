@@ -24,6 +24,30 @@ const getAll = (req, res) => {
     }
 };
 
+const getById = (id, res) => {
+    console.log('Test getAll: ', id);
+    try {
+        Test.findAll({
+            include: [
+                { model: Difficulty, as: 'difficulty'},
+                { model: Category, as: 'category'},
+            ],
+            where: { id: id }
+        })
+        .then((result)=>{
+            console.log('Test', result);
+            return res.status(200).send(transform.transform(result));
+        })
+        .catch((e)=>{
+            console.log('Test error: ', e);
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('Test getAll: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
 const getByCategory = (category_id, res) => {
     console.log('Test getAll: ', req.body);
     try {
@@ -51,6 +75,28 @@ const getByDifficulty = (difficulty_id, res) => {
     try {
         Test.findAll({
             where: { difficulty_id: difficulty_id},
+            include: [
+                { model: Difficulty, as: 'difficulty'},
+                { model: Category, as: 'category'},
+            ],
+        })
+        .then((result)=>{
+            return res.status(200).send(transform.transform(result));
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('Test getAll: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
+const getByCategoryAndDifficulty = (difficulty_id, category_id, res) => {
+    console.log('Test getAll: ', req.body);
+    try {
+        Test.findAll({
+            where: { difficulty_id: difficulty_id, category_id: category_id},
             include: [
                 { model: Difficulty, as: 'difficulty'},
                 { model: Category, as: 'category'},
@@ -150,5 +196,6 @@ module.exports = {
     deleteItem: deleteItem,
     getByCategory: getByCategory,
     getByDifficulty: getByDifficulty,
-    //getByCategoryAndDifficulty: getByCategoryAndDifficulty,
+    getByCategoryAndDifficulty: getByCategoryAndDifficulty,
+    getById: getById,
 };
