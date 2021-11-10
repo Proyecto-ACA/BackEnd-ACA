@@ -3,7 +3,7 @@ var router = express.Router();
 const Test = require('../controllers/tests/test');
 const Category = require('../controllers/lessons/category');
 const Difficulty = require('../controllers/tests/difficulty');
-const TestXQuestion = require('../controllers/tests/testXQuestion');
+const TestXQuestion = require('../controllers/tests/testxquestion');
 
 const routes = {
     categoryGetAll: '/category/getAll',
