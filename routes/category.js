@@ -41,10 +41,7 @@ router.post(routes.categorySave, function(req, res, next) {
 });
 
 router.delete(routes.categoryDelete, function(req, res, next) {
-    let item = {
-        id: req.params.id,
-    }
-    Category.delete(item, res);
+    Category.deleteItem(req, res);
 });
 
 router.patch(routes.categoryUpdate, function(req, res, next) {
