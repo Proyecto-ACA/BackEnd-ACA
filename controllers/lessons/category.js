@@ -145,10 +145,12 @@ const update = (item, res) => {
     }
 };
 
-const deleteItem = (item, res) => {
-    console.log('category update: ', item);
+const deleteItem = (req, res) => {
+    const id = req.query.id;
+    var condition = id ? { id:`${id}`} : null;
+    console.log('categoria delete: ', req.id);
     try {
-        Category.destroy({ where: { id: item.id}})
+        Category.destroy({ where:condition})
         .then((result)=>{
             return res.status(200).json({
                 success: true,
@@ -162,7 +164,7 @@ const deleteItem = (item, res) => {
             });
         });
     } catch (err) {
-        console.log('category delete: ', err.message);
+        console.log('sign delete: ', err.message);
         return res.status(500).json({
             success: false,
             error: err,
