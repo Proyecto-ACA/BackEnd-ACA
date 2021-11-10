@@ -1,21 +1,13 @@
 const Difficulty = require('../../models/test/difficulty');
+const transform = require('./transformDifficuty');
 
-const transform = (records) => {
-    return records.map((record) => {
-        return {
-            id: record.id,
-            name: record.name,
-            difficulty: record.difficulty
-        }
-    });
-}
 
 const getAll = (req, res) => {
     console.log('Difficulty getAll: ', req.body);
     try {
         Difficulty.findAll()
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);

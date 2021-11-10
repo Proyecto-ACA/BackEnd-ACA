@@ -1,21 +1,12 @@
 const Category = require('../../models/test/category');
-
-const transform = (records) => {
-    return records.map((record) => {
-        return {
-            id: record.id,
-            name: record.name,
-            category: record.category
-        }
-    });
-}
+const transform = require('./trasnformCategory');
 
 const getAll = (req, res) => {
     console.log('Category getAll: ', req.body);
     try {
         Category.findAll()
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);

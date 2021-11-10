@@ -1,4 +1,5 @@
 const Question = require('../../models/test/question');
+const Sign = require('../../models/signs/sign');
 
 const transform = (records) => {
     return records.map((record) => {
@@ -13,7 +14,11 @@ const transform = (records) => {
 const getAll = (req, res) => {
     console.log('Question getAll: ', req.body);
     try {
-        Question.findAll()
+        Question.findAll({
+            include: [
+                { model: Sign , as: 'sign' },
+            ],
+        })
         .then((result)=>{
             return res.status(200).send(transform(result));
         })
