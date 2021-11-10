@@ -7,6 +7,8 @@ const transform = (records) => {
         return {
             id: record.id,
             name: record.name,
+            difficulty_id: record.difficulty_id,
+            category_id: record.category_id
         }
     });
 }
