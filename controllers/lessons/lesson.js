@@ -16,6 +16,7 @@ const getAll = (req, res) => {
             return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
+            console.log('lesson ge all error: ', e)
             return res.status(400).send(e);
         })  ;
     } catch (err) {
