@@ -12,6 +12,7 @@ const getAll = (req, res) => {
                 { model: Level , as: 'level'},
                 { model: Category , as: 'category'},
             ],
+            order: [['id', 'ASC']]
         })
         .then((result)=>{
             return res.status(200).send(transform.transform(result));
