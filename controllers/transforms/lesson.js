@@ -1,11 +1,9 @@
+const transformLevel = require('../lessons/transformLevel');
+const transformCategory = require('./category');
+
 const transform = (records) => {
     return records.map((record) => {
-        return {
-            id: record.id,
-            name: record.name,
-            image: record.image,
-            description: record.description
-        }
+        return casteo(record);
     });
 }
 
@@ -14,7 +12,9 @@ const casteo = (record) => {
             id: record.id,
             name: record.name,
             image: record.image,
-            description: record.description
+            description: record.description,
+            level: transformLevel.render(record.level),
+            category: transformCategory.render(record.category),
         }
 }
 

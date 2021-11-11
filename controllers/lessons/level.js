@@ -1,21 +1,14 @@
 const Level = require('../../models/lessons/level');
+const transform = require('./transformLevel');
 
-const transform = (records) => {
-    return records.map((record) => {
-        return {
-            id: record.id,
-            name: record.name,
-            level: record.level
-        }
-    });
-}
+
 
 const getAll = (req, res) => {
     console.log('level getAll: ', req.body);
     try {
         Level.findAll()
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);

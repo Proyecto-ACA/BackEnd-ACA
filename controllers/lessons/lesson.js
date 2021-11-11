@@ -1,5 +1,6 @@
 const Lesson = require('../../models/lessons/lesson');
-const LessonXSign = require('../../models/lessons/lessonxsign')
+const Level = require('../../models/lessons/level');
+const Category = require('../../models/lessons/category');
 
 const transform = require('../transforms/lesson');
 
@@ -8,9 +9,9 @@ const getAll = (req, res) => {
     try {
         Lesson.findAll({
             include: [
-                //{ model: LessonXSign , as: 'lessons'},
+                { model: Level , as: 'level'},
+                { model: Category , as: 'category'},
             ],
-            //group: 'lessons.id',
         })
         .then((result)=>{
             return res.status(200).send(transform.transform(result));

@@ -2,7 +2,7 @@ const render = (record) => {
     return {
         id: record.id,
         name: record.name,
-        image: record.image
+        level: record.level
     }
 }
 
