@@ -3,6 +3,7 @@ var router = express.Router();
 const Test = require('../controllers/tests/test');
 const Category = require('../controllers/lessons/category');
 const Difficulty = require('../controllers/tests/difficulty');
+const TestXQuestion = require('../controllers/tests/testxquestion');
 
 const routes = {
     categoryGetAll: '/category/getAll',
@@ -16,12 +17,19 @@ const routes = {
     difficultyUpdate: '/difficulty/update',
 
     testGetAll: '/test/getAll',
+    testGetById: '/test/get',
     testGetByCategory: '/test/getByCategory',
     testGetByDifficulty: '/test/getByDifficulty',
     testGetByCategoryAndDifficulty: '/test/getByCategoryAndDifficulty',
     testSave: '/test/save',
     testDelete: '/test/delete',
     testUpdate: '/test/update',
+
+    testXQuestionGetAll: '/testxquestion/getAll',
+    testXQuestionGetByTest: '/testxquestion/getByTest',
+    testXQuestionSave: '/testxquestion/save',
+    testXQuestionDelete: '/testxquestion/delete',
+    testXQuestionUpdate: '/testxquestion/update',
 }
 
 router.get(routes.categoryGetAll, function(req, res, next) {
@@ -87,16 +95,20 @@ router.get(routes.testGetAll, function(req, res, next) {
     Test.getAll(req, res);
 });
 
+router.get(routes.testGetById, (req, res, next) => {
+    Test.getById(req.query.id, res);
+});
+
 router.get(routes.testGetByCategory, (req, res, next) => {
     Test.getByCategory(req.params.Category, res);
 });
 
 router.get(routes.testGetByDifficulty, (req, res, next) => {
-    Test.getByCategory(req.params.difficulty, res);
+    Test.getByDifficulty(req.params.difficulty, res);
 });
 
 router.get(routes.testGetByCategoryAndDifficulty, (req, res, next) => {
-    Test.getByCategory(req.params.category ,req.params.difficulty, res);
+    Test.getByCategoryAndDifficulty(req.params.category ,req.params.difficulty, res);
 });
 
 router.post(routes.testSave, function(req, res, next) {
@@ -123,6 +135,45 @@ router.patch(routes.testUpdate, function(req, res, next) {
         category: req.params.category, //id
     }
     Test.update(item, res);
+});
+
+
+
+
+
+
+
+
+router.get(routes.testXQuestionGetAll, (req, res, next) => {
+    TestXQuestion.getAll(req, res);
+});
+
+router.get(routes.testXQuestionGetByTest, (req, res, next) => {
+    TestXQuestion.getById(req.query.test, res);
+});
+
+router.post(routes.testSave, (req, res, next) => {
+    let item = {
+        test_id: req.body.test, //id
+        question_id: req.body.question, //id
+    }
+    TestXQuestion.save(item, res);
+});
+
+router.delete(routes.testDelete, function(req, res, next) {
+    let item = {
+        id: req.params.id,
+    }
+    TestXQuestion.delete(item, res);
+});
+
+router.patch(routes.testUpdate, function(req, res, next) {
+    let item = {
+        id: req.params.id,
+        test_id: req.body.test, //id
+        question_id: req.body.question, //id
+    }
+    TestXQuestion.update(item, res);
 });
 
 module.exports = router;

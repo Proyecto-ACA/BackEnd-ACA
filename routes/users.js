@@ -20,6 +20,15 @@ router.get('/users/getAll', function(req, res, next) {
   User.getAll(req, res);
 });
 
+router.get('/users/getOne/:id', function(req, res, next) {
+  User.getOne(req, res);
+});
+
+router.delete('/users/delete', function(req, res, next) {
+  User.deleteItem(req, res);
+});
+
+
 router.post('/users/userid', function(req, res, next) {
   console.log(req.body)
   let item = {

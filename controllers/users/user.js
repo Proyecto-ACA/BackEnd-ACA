@@ -5,6 +5,7 @@ const transform = (records) => {
         return {
             id: record.id,
             name: record.name,
+            rol_id:record.rol_id
         }
     });
 }
@@ -21,6 +22,23 @@ const getAll = (req, res) => {
         })  ;
     } catch (err) {
         console.log('users: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
+const getOne = (req, res) => {
+    const id = req.params.id;
+    console.log('Users getOne: ', id);
+    try {
+        User.findByPk(id)
+        .then((result)=>{
+            return res.status(200).send(result);
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('signs: ', err.message);
         return res.status(500).send(err);
     }
 };
@@ -133,11 +151,12 @@ const update = (item, res) => {
         });
     }
 };
-
-const deleteItem = (item, res) => {
-    console.log('User update: ', item);
+const deleteItem = (req, res) => {
+    const id = req.query.id;
+    var condition = id ? { id:`${id}`} : null;
+    console.log('usuario delete: ', req.id);
     try {
-        User.destroy({ where: { id: item.id}})
+        User.destroy({ where:condition})
         .then((result)=>{
             return res.status(200).json({
                 success: true,
@@ -151,7 +170,7 @@ const deleteItem = (item, res) => {
             });
         });
     } catch (err) {
-        console.log('User delete: ', err.message);
+        console.log('sign delete: ', err.message);
         return res.status(500).json({
             success: false,
             error: err,
@@ -162,6 +181,7 @@ const deleteItem = (item, res) => {
 module.exports = {
     getAll: getAll,
     save: save,
+    getOne:getOne,
     findUser: findUser,
     findId: findId,
     update: update,

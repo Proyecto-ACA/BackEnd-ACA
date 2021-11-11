@@ -442,6 +442,8 @@ INSERT INTO test_categorys (category, name) VALUES (2, 'Opcion Multiple');
 
 INSERT INTO test_difficultys (difficulty, name) VALUES (1, 'Facil');
 INSERT INTO test_difficultys (difficulty, name) VALUES (2, 'Normal');
+INSERT INTO test_difficultys (difficulty, name) VALUES (3, 'dificil');
+INSERT INTO test_difficultys (difficulty, name) VALUES (4, 'infierno');
 
 INSERT INTO lesson_levels (level, name) VALUES (1, 'facil');
 INSERT INTO lesson_levels (level, name) VALUES (2, 'normal');
@@ -449,6 +451,39 @@ INSERT INTO lesson_levels (level, name) VALUES (3, 'dificil');
 INSERT INTO lesson_levels (level, name) VALUES (4, 'infierno');
 
 INSERT INTO lessons (name, image, description, level_id, category_id)
-    VALUES ('leccion 1 - 23', 'https://drive.google.com/file/d/1ceoOJwI5YEKwAUSZPDcffjL4NVyajIz8/view?usp=sharing','tu primera leccion ;v',1,1);
+    VALUES ('leccion 1 - 23', 'https://cdn-icons-png.flaticon.com/512/547/547612.png','tu primera leccion ;v',1,1);
+INSERT INTO lessons (name, image, description, level_id, category_id)
+    VALUES ('leccion 2 - 23', 'https://cdn-icons-png.flaticon.com/512/547/547612.png','tu primera leccion ;v',1,1);
+INSERT INTO lessons (name, image, description, level_id, category_id)
+    VALUES ('leccion 3 - 23', 'https://cdn-icons-png.flaticon.com/512/547/547612.png','tu primera leccion ;v',1,1);
+INSERT INTO lessons (name, image, description, level_id, category_id)
+    VALUES ('leccion 4 - 23', 'https://cdn-icons-png.flaticon.com/512/547/547612.png','tu primera leccion ;v',1,1);
 
 INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 1, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 2, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 3, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 4, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 5, 2);
+
+INSERT INTO tests (name, difficulty_id, category_id) VALUES ('esxamencito 1 :v', 1, 1);
+INSERT INTO tests (name, difficulty_id, category_id) VALUES ('esxamencito 2 :v', 1, 2);
+INSERT INTO tests (name, difficulty_id, category_id) VALUES ('esxamencito 3 :v', 1, 1);
+INSERT INTO tests (name, difficulty_id, category_id) VALUES ('esxamencito 4 :v', 1, 1);
+
+
+INSERT INTO questions (statement, sign_id) VALUES ('yo soy la pregunta 1... adivina mi respuesta :v', 1);
+INSERT INTO questions (statement, sign_id) VALUES ('yo soy la pregunta 2... adivina mi respuesta :v', 2);
+INSERT INTO questions (statement, sign_id) VALUES ('yo soy la pregunta 3... adivina mi respuesta :v', 3);
+INSERT INTO questions (statement, sign_id) VALUES ('yo soy la pregunta 4... adivina mi respuesta :v', 4);
+INSERT INTO questions (statement, sign_id) VALUES ('yo soy la pregunta 5... adivina mi respuesta :v', 5);
+INSERT INTO questions (statement, sign_id) VALUES ('yo soy la pregunta 6... adivina mi respuesta :v', 6);
+INSERT INTO questions (statement, sign_id) VALUES ('yo soy la pregunta 7... adivina mi respuesta :v', 7);
+
+INSERT INTO test_x_question (test_id, question_id) VALUES (1, 1);
+INSERT INTO test_x_question (test_id, question_id) VALUES (1, 2);
+INSERT INTO test_x_question (test_id, question_id) VALUES (1, 3);
+INSERT INTO test_x_question (test_id, question_id) VALUES (1, 4);
+INSERT INTO test_x_question (test_id, question_id) VALUES (2, 1);
+INSERT INTO test_x_question (test_id, question_id) VALUES (2, 2);
+INSERT INTO test_x_question (test_id, question_id) VALUES (2, 3);
+INSERT INTO test_x_question (test_id, question_id) VALUES (2, 4);

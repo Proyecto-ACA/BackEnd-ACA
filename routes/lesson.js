@@ -149,7 +149,8 @@ router.get(routes.lessonsignGetAll, (req, res, next) => {
 
 router.get(routes.lessonsignGetById, (req, res, next) => {
     console.log('testsign get by id');
-    LessonSign.getAll({ lesson: req.params.lesson}, res);
+    console.log(req.query);
+    LessonSign.getById({ lesson: req.query.lesson}, res);
 });
 
 router.post(routes.lessonsignSave, (req, res, next) => {

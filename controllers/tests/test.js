@@ -1,15 +1,7 @@
 const Test = require('../../models/test/test');
 const Difficulty = require('../../models/test/difficulty');
 const Category = require('../../models/test/category');
-
-const transform = (records) => {
-    return records.map((record) => {
-        return {
-            id: record.id,
-            name: record.name,
-        }
-    });
-}
+const transform = require('./transformTest');
 
 const getAll = (req, res) => {
     console.log('Test getAll: ', req.body);
@@ -21,9 +13,33 @@ const getAll = (req, res) => {
             ],
         })
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('Test getAll: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
+const getById = (id, res) => {
+    console.log('Test getAll: ', id);
+    try {
+        Test.findAll({
+            include: [
+                { model: Difficulty, as: 'difficulty'},
+                { model: Category, as: 'category'},
+            ],
+            where: { id: id }
+        })
+        .then((result)=>{
+            console.log('Test', result);
+            return res.status(200).send(transform.transform(result));
+        })
+        .catch((e)=>{
+            console.log('Test error: ', e);
             return res.status(400).send(e);
         })  ;
     } catch (err) {
@@ -43,7 +59,7 @@ const getByCategory = (category_id, res) => {
             ],
         })
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);
@@ -65,7 +81,29 @@ const getByDifficulty = (difficulty_id, res) => {
             ],
         })
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
+        })
+        .catch((e)=>{
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('Test getAll: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
+const getByCategoryAndDifficulty = (difficulty_id, category_id, res) => {
+    console.log('Test getAll: ', req.body);
+    try {
+        Test.findAll({
+            where: { difficulty_id: difficulty_id, category_id: category_id},
+            include: [
+                { model: Difficulty, as: 'difficulty'},
+                { model: Category, as: 'category'},
+            ],
+        })
+        .then((result)=>{
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);
@@ -158,5 +196,6 @@ module.exports = {
     deleteItem: deleteItem,
     getByCategory: getByCategory,
     getByDifficulty: getByDifficulty,
-    //getByCategoryAndDifficulty: getByCategoryAndDifficulty,
+    getByCategoryAndDifficulty: getByCategoryAndDifficulty,
+    getById: getById,
 };

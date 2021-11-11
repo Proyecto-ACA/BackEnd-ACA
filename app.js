@@ -11,6 +11,7 @@ const PassportLocal = require('passport-local').Strategy;
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const rolRouter = require('./routes/rol');
 const { initSequelize } = require('./services/initService');
 const testRouter = require('./routes/test');
 // DB
@@ -66,6 +67,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/', usersRouter);
+app.use('/', rolRouter);
 app.use('/test', testRouter);
 app.use('/lesson', lessonRouter);
 // DB

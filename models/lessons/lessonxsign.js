@@ -25,6 +25,7 @@ const LessonXSign = sequelize.define('lesson_x_sign', {
     },
 }, { timestamps: false });
 
+//Lesson.hasMany(LessonXSign, {sourceKey: 'id'});
 LessonXSign.belongsTo(Lesson, { as: 'lesson',foreignKey: 'lesson_id' });
 LessonXSign.belongsTo(Sign, { as: 'sign',foreignKey: 'sign_id' });
 
