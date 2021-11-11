@@ -14,9 +14,10 @@ const getAll = (req, res) => {
             order: [['name', 'ASC']] 
         })
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
+            console.log('error category', e)
             return res.status(400).send(e);
         })  ;
     } catch (err) {
