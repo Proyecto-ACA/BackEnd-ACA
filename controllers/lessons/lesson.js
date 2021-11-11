@@ -27,6 +27,29 @@ const getAll = (req, res) => {
     }
 };
 
+const getOne = (id, res) => {
+    console.log('lesson getAll: ', req.body);
+    try {
+        Lesson.findOne({
+            include: [
+                { model: Level , as: 'level'},
+                { model: Category , as: 'category'},
+            ],
+            where: {id : id }
+        })
+        .then((result)=>{
+            return res.status(200).send(transform.transform(result));
+        })
+        .catch((e)=>{
+            console.log('lesson ge all error: ', e)
+            return res.status(400).send(e);
+        })  ;
+    } catch (err) {
+        console.log('lesson getAll: ', err.message);
+        return res.status(500).send(err);
+    }
+};
+
 const getByCategory = (category_id, res) => {
     console.log('lesson get by category: ', req.body);
     try {
@@ -158,6 +181,7 @@ const deleteItem = (item, res) => {
 
 module.exports = {
     getAll: getAll,
+    getOne: getOne,
     save: save,
     update: update,
     deleteItem: deleteItem,
