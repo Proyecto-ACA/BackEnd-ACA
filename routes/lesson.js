@@ -17,6 +17,7 @@ const routes = {
     levelUpdate: '/level/update',
 
     lessonGetAll: '/lesson/getAll',
+    lessonGetOne: '/lesson/getOne',
     lessonGetByCategory: '/lesson/getByCategory',
     lessonGetByDifficulty: '/lesson/getByDifficulty',
     lessonGetByCategoryAndDifficulty: '/lesson/getByCategoryAndDifficulty',
@@ -96,6 +97,10 @@ router.patch(routes.levelUpdate, function(req, res, next) {
 
 router.get(routes.lessonGetAll, (req, res, next) => {
     Lesson.getAll(req, res);
+});
+
+router.get(routes.lessonGetOne, (req, res, next) => {
+    Lesson.getOne(req.query.id, res);
 });
 
 router.get(routes.lessonGetByCategory, (req, res, next) => {

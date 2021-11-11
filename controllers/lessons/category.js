@@ -37,7 +37,7 @@ const getAllOrderbyId = (req, res) => {
             order: [['id', 'ASC']] 
         })
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);
@@ -65,7 +65,7 @@ const getAllbyName = (req, res) => {
             order: [['name', 'ASC'],] 
         })        
         .then((result)=>{
-            return res.status(200).send(transform(result));
+            return res.status(200).send(transform.transform(result));
         })
         .catch((e)=>{
             return res.status(400).send(e);
