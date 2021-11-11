@@ -158,12 +158,11 @@ router.get(routes.lessonsignGetById, (req, res, next) => {
 
 router.post(routes.lessonsignSave, (req, res, next) => {
     let item = {
-        lesson_id: req.params.lesson,
-        sign_id: req.params.sign,
-        type: req.params.type
+        lesson_id: req.body.lesson,
+        sign_id: req.body.sign,
+        type: req.body.type
     }
-    console.log(item);
-    console.log(req.body.level);
+    console.log('item', item);
     LessonSign.save(item, res);
 });
 
