@@ -112,11 +112,11 @@ router.get(routes.lessonGetByDifficulty, (req, res, next) => {
 
 router.post(routes.lessonSave, (req, res, next) => {
     let item = {
-        name: req.params.name,
-        image: req.params.image,
+        name: req.body.name,
+        image: req.body.image,
         description: req.body.description,
-        level_id: req.params.level,
-        category_id: req.params.category,
+        level_id: req.body.level,
+        category_id: req.body.category,
     }
     console.log(item);
     console.log(req.body.level);
@@ -129,12 +129,12 @@ router.delete(routes.lessonDelete, (req, res, next) => {
 
 router.patch(routes.lessonUpdate, (req, res, next) => {
     let item = {
-        id: req.params.id,
-        name: req.params.name,
-        image: req.params.image,
+        id: req.body.id,
+        name: req.body.name,
+        image: req.body.image,
         description: req.body.description,
-        level_id: req.params.level,
-        category_id: req.params.category,
+        level_id: req.body.level,
+        category_id: req.body.category,
     }
     Lesson.update(item, res);
 });
