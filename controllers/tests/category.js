@@ -1,5 +1,5 @@
 const Category = require('../../models/test/category');
-const transform = require('./trasnformCategory');
+const transform = require('./transformCategory');
 
 const getAll = (req, res) => {
     console.log('Category getAll: ', req.body);

@@ -125,6 +125,7 @@ const save = (item, res) => {
             });
         })
         .catch((e)=>{
+            console.log('error test save:', e);
             return res.status(400).json({
                 success: false,
                 error: e,
@@ -167,7 +168,7 @@ const update = (item, res) => {
 const deleteItem = (item, res) => {
     console.log('Test update: ', item);
     try {
-        Test.destroy({ where: { id: item.id}})
+        Test.destroy({ where: { id: item }})
         .then((result)=>{
             return res.status(200).json({
                 success: true,

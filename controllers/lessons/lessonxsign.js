@@ -116,7 +116,7 @@ const update = (item, res) => {
 const deleteItem = (item, res) => {
     console.log('LessonXSign update: ', item);
     try {
-        LessonXSign.destroy({ where: { id: item.id}})
+        LessonXSign.destroy({ where: { id: item}})
         .then((result)=>{
             return res.status(200).json({
                 success: true,

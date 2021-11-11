@@ -168,10 +168,7 @@ router.post(routes.lessonsignSave, (req, res, next) => {
 });
 
 router.delete(routes.lessonsignDelete, (req, res, next) => {
-    let item = {
-        id: req.params.id,
-    }
-    LessonSign.deleteItem(item, res);
+    LessonSign.deleteItem(req.query.id, res);
 });
 
 router.patch(routes.lessonsignUpdate, (req, res, next) => {

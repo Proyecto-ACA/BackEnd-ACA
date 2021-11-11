@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Test = require('../controllers/tests/test');
-const Category = require('../controllers/lessons/category');
+const Category = require('../controllers/tests/category');
 const Difficulty = require('../controllers/tests/difficulty');
 const TestXQuestion = require('../controllers/tests/testxquestion');
 
@@ -62,7 +62,7 @@ router.patch(routes.categoryUpdate, function(req, res, next) {
     Category.update(item, res);
 });
 
-router.get(routes.difficultyGetAll, function(req, res, next) {
+router.get(routes.difficultyGetAll, (req, res, next) => {
     Difficulty.getAll(req, res);
 });
 
@@ -100,15 +100,15 @@ router.get(routes.testGetById, (req, res, next) => {
 });
 
 router.get(routes.testGetByCategory, (req, res, next) => {
-    Test.getByCategory(req.params.Category, res);
+    Test.getByCategory(req.query.Category, res);
 });
 
 router.get(routes.testGetByDifficulty, (req, res, next) => {
-    Test.getByDifficulty(req.params.difficulty, res);
+    Test.getByDifficulty(req.query.difficulty, res);
 });
 
 router.get(routes.testGetByCategoryAndDifficulty, (req, res, next) => {
-    Test.getByCategoryAndDifficulty(req.params.category ,req.params.difficulty, res);
+    Test.getByCategoryAndDifficulty(req.query.category ,req.query.difficulty, res);
 });
 
 router.post(routes.testSave, function(req, res, next) {
@@ -120,19 +120,16 @@ router.post(routes.testSave, function(req, res, next) {
     Test.save(item, res);
 });
 
-router.delete(routes.testDelete, function(req, res, next) {
-    let item = {
-        id: req.params.id,
-    }
-    Test.delete(item, res);
+router.delete(routes.testDelete, (req, res, next) => {
+    Test.deleteItem(req.query.id, res);
 });
 
 router.patch(routes.testUpdate, function(req, res, next) {
     let item = {
-        id: req.params.id,
-        name: req.params.name,
-        difficulty: req.params.difficulty, //id
-        category: req.params.category, //id
+        id: req.body.id,
+        name: req.body.name,
+        difficulty_id: req.body.difficulty, //id
+        category_id: req.body.category, //id
     }
     Test.update(item, res);
 });
@@ -152,7 +149,7 @@ router.get(routes.testXQuestionGetByTest, (req, res, next) => {
     TestXQuestion.getById(req.query.test, res);
 });
 
-router.post(routes.testSave, (req, res, next) => {
+router.post(routes.testXQuestionSave, (req, res, next) => {
     let item = {
         test_id: req.body.test, //id
         question_id: req.body.question, //id
@@ -160,14 +157,14 @@ router.post(routes.testSave, (req, res, next) => {
     TestXQuestion.save(item, res);
 });
 
-router.delete(routes.testDelete, function(req, res, next) {
+router.delete(routes.testXQuestionDelete, function(req, res, next) {
     let item = {
         id: req.params.id,
     }
     TestXQuestion.delete(item, res);
 });
 
-router.patch(routes.testUpdate, function(req, res, next) {
+router.patch(routes.testXQuestionUpdate, function(req, res, next) {
     let item = {
         id: req.params.id,
         test_id: req.body.test, //id
