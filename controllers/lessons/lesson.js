@@ -28,9 +28,9 @@ const getAll = (req, res) => {
 };
 
 const getOne = (id, res) => {
-    console.log('lesson getAll: ', req.body);
+    console.log('lesson getOne: ', id);
     try {
-        Lesson.findOne({
+        Lesson.findAll({
             include: [
                 { model: Level , as: 'level'},
                 { model: Category , as: 'category'},

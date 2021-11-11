@@ -100,6 +100,7 @@ router.get(routes.lessonGetAll, (req, res, next) => {
 });
 
 router.get(routes.lessonGetOne, (req, res, next) => {
+    console.log('aqui', req.query.id)
     Lesson.getOne(req.query.id, res);
 });
 
