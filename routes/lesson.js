@@ -51,7 +51,7 @@ router.delete(routes.categoryDelete, function(req, res, next) {
     let item = {
         id: req.params.id,
     }
-    Category.delete(item, res);
+    Category.deleteItem(item, res);
 });
 
 router.patch(routes.categoryUpdate, function(req, res, next) {
@@ -82,7 +82,7 @@ router.delete(routes.levelDelete, function(req, res, next) {
     let item = {
         id: req.params.id,
     }
-    Level.delete(item, res);
+    Level.deleteItem(item, res);
 });
 
 router.patch(routes.levelUpdate, function(req, res, next) {
@@ -124,10 +124,7 @@ router.post(routes.lessonSave, (req, res, next) => {
 });
 
 router.delete(routes.lessonDelete, (req, res, next) => {
-    let item = {
-        id: req.params.id,
-    }
-    Lesson.delete(item, res);
+    Lesson.deleteItem(req.query.id, res);
 });
 
 router.patch(routes.lessonUpdate, (req, res, next) => {
@@ -168,7 +165,7 @@ router.delete(routes.lessonsignDelete, (req, res, next) => {
     let item = {
         id: req.params.id,
     }
-    LessonSign.delete(item, res);
+    LessonSign.deleteItem(item, res);
 });
 
 router.patch(routes.lessonsignUpdate, (req, res, next) => {

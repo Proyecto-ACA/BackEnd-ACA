@@ -134,7 +134,7 @@ const update = (item, res) => {
 const deleteItem = (item, res) => {
     console.log('lesson update: ', item);
     try {
-        Lesson.destroy({ where: { id: item.id}})
+        Lesson.destroy({ where: { id: item}})
         .then((result)=>{
             return res.status(200).json({
                 success: true,

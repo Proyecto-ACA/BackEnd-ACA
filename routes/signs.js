@@ -57,7 +57,7 @@ router.post(routes.signsSave, function(req, res, next) {
         sign: req.body.sign,
         description: req.body.description,
         image: req.body.image,
-        active: req.body.active,
+        active: true,
     }
     console.log("=====================================================================")
     // console.log(item);
@@ -81,7 +81,7 @@ router.patch(routes.signsUpdate, function(req, res, next) {
         sign: req.body.sign,
         description: req.body.description,
         image: req.body.image,
-        active: req.body.active,
+        active: true,
     }
     Signs.update(item, res);
 });
