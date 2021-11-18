@@ -4,6 +4,7 @@ const Test = require('../controllers/tests/test');
 const Category = require('../controllers/tests/category');
 const Difficulty = require('../controllers/tests/difficulty');
 const TestXQuestion = require('../controllers/tests/testxquestion');
+const Question = require('../controllers/tests/questions');
 
 const routes = {
     categoryGetAll: '/category/getAll',
@@ -30,6 +31,8 @@ const routes = {
     testXQuestionSave: '/testxquestion/save',
     testXQuestionDelete: '/testxquestion/delete',
     testXQuestionUpdate: '/testxquestion/update',
+
+    questionSave: '/question/save',
 }
 
 router.get(routes.categoryGetAll, function(req, res, next) {
@@ -158,10 +161,7 @@ router.post(routes.testXQuestionSave, (req, res, next) => {
 });
 
 router.delete(routes.testXQuestionDelete, function(req, res, next) {
-    let item = {
-        id: req.params.id,
-    }
-    TestXQuestion.delete(item, res);
+    TestXQuestion.deleteItem(req.query.id, res);
 });
 
 router.patch(routes.testXQuestionUpdate, function(req, res, next) {
@@ -171,6 +171,15 @@ router.patch(routes.testXQuestionUpdate, function(req, res, next) {
         question_id: req.body.question, //id
     }
     TestXQuestion.update(item, res);
+});
+
+router.post(routes.questionSave, (req, res, next) => {
+    let item = {
+        statement: req.body.statement,
+        sign_id: req.body.sign,
+    }
+    console.log('item question to save', item);
+    Question.save(item, res);
 });
 
 module.exports = router;
