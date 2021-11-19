@@ -57,7 +57,7 @@ router.post(routes.signsSave, function(req, res, next) {
         sign: req.body.sign,
         description: req.body.description,
         image: req.body.image,
-        active: true,
+        active: req.body.active == 2? false: true,
     }
     console.log("=====================================================================")
     // console.log(item);

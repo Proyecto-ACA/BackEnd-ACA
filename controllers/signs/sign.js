@@ -7,6 +7,7 @@ const transform = require('../transforms/signs');
 const getAll = (req, res) => {
     const id = req.query.id;
     var condition = id ? { id:`${id}`} : null;
+    condition.active = true;
     console.log('signs getAll: ', req.body);
     try {
         Sign.findAll( 
