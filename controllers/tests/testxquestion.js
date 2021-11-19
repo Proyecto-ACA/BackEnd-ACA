@@ -66,7 +66,7 @@ const getById = (item, res) => {
 const save = (item, res) => {
     console.log('testxquestion save: ', item);
     try {
-        LessonXSign.create(item)
+        TestXQuestion.create(item)
         .then((result)=>{
             return res.status(200).json({
                 success: true,
@@ -91,7 +91,7 @@ const save = (item, res) => {
 const update = (item, res) => {
     console.log('testxquestion update: ', item);
     try {
-        LessonXSign.update(item, { where: { id: item.id}})
+        TestXQuestion.update(item, { where: { id: item.id}})
         .then((result)=>{
             return res.status(200).json({
                 success: true,
@@ -116,7 +116,7 @@ const update = (item, res) => {
 const deleteItem = (item, res) => {
     console.log('testxquestion delete: ', item);
     try {
-        LessonXSign.destroy({ where: { id: item.id}})
+        TestXQuestion.destroy({ where: { id: item}})
         .then((result)=>{
             return res.status(200).json({
                 success: true,
