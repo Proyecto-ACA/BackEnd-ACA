@@ -436,6 +436,10 @@ INSERT INTO users(
 	name, rol_id, password)
 	VALUES ('admin', 1, '$2a$10$MjmJo4NI9WZgoxunBkNeOeCYI8Lkd7k8r71lK.mx5H780cVqtAo42');
 
+INSERT INTO users(
+	name, rol_id, password)
+	VALUES ('alumno', 2, '$2a$10$MjmJo4NI9WZgoxunBkNeOeCYI8Lkd7k8r71lK.mx5H780cVqtAo42');
+
 
 INSERT INTO test_categorys (category, name) VALUES (1, 'Falso o Verdadero');
 INSERT INTO test_categorys (category, name) VALUES (2, 'Opcion Multiple');
@@ -466,9 +470,9 @@ INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 4, 1);
 INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 5, 2);
 
 INSERT INTO tests (name, difficulty_id, category_id) VALUES ('Examen 1', 1, 1);
-INSERT INTO tests (name, difficulty_id, category_id) VALUES ('Examen 2', 1, 2);
-INSERT INTO tests (name, difficulty_id, category_id) VALUES ('Examen 3', 1, 1);
-INSERT INTO tests (name, difficulty_id, category_id) VALUES ('Examen 4', 1, 2);
+INSERT INTO tests (name, difficulty_id, category_id) VALUES ('Examen 2', 2, 2);
+INSERT INTO tests (name, difficulty_id, category_id) VALUES ('Examen 3', 3, 1);
+INSERT INTO tests (name, difficulty_id, category_id) VALUES ('Examen 4', 4, 2);
 
 
 INSERT INTO questions (statement, sign_id) VALUES ('pregunta 1', 1);
