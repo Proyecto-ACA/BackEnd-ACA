@@ -7,6 +7,7 @@ const transform = (records) => {
             sign: record.sign,
             description: record.description,
             image: record.image,
+            active: record.active
         }
     });
 }
@@ -19,6 +20,7 @@ const casteo = (record) => {
             sign: record.sign,
             description: record.description,
             image: record.image,
+            active: record.active
         }
 }
 

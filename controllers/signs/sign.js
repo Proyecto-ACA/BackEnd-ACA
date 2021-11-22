@@ -38,7 +38,9 @@ const getallorderbyId = (req, res) => {
             order: [['id', 'ASC'],] 
         })
         .then((result)=>{
-            return res.status(200).send(transform.transform(result));
+            let resultdata = transform.transform(result);
+            console.log(resultdata);
+            return res.status(200).send(resultdata);
         })
         .catch((e)=>{
             return res.status(400).send(e);
@@ -60,11 +62,13 @@ const getallbyCategory = (req, res) => {
     try {
         Sign.findAll( 
         {
-            where:condition ,
+            where: {...condition , active: true } ,
             order: [['name', 'ASC'],] 
         })        
         .then((result)=>{
-            return res.status(200).send(transform.transform(result));
+            let resultdata = transform.transform(result);
+            console.log(resultdata);
+            return res.status(200).send(resultdata);
         })
         .catch((e)=>{
             return res.status(400).send(e);

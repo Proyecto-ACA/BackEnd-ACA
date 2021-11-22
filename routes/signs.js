@@ -41,15 +41,7 @@ router.post(routes.signsSave, function(req, res, next) {
         console.log("=====================================================================")
 
     }
-    //     let item = {
-    //     id: req.params.id,
-    //     name: req.params.name,
-    //     category_id: req.params.category_id,
-    //     sign: req.params.sign,
-    //     description: req.params.description,
-    //     image: req.params.image,
-    // }
-    //  //JSON
+    
     let item = {
         id: req.body.id,
         name: req.body.name,
@@ -57,10 +49,10 @@ router.post(routes.signsSave, function(req, res, next) {
         sign: req.body.sign,
         description: req.body.description,
         image: req.body.image,
-        active: req.body.active == 2? false: true,
+        active: req.body.active == 2 ? false: true,
     }
     console.log("=====================================================================")
-    // console.log(item);
+    console.log("item sign save", item);
     console.log(req.body.Signs);
     console.log("=====================================================================")
     Signs.save(item, res);
