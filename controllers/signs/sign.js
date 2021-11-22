@@ -12,7 +12,7 @@ const getAll = (req, res) => {
     try {
         Sign.findAll( 
         {
-            where:condition ,
+            where: {...condition , active: true } ,
             order: [['name', 'ASC'],] 
         })
         .then((result)=>{
@@ -91,7 +91,8 @@ const getAllbyName = (req, res) => {
             {
                 name:{
                 [op.iLike]:`%${name}%` 
-                }
+                },
+                active: true
             },
             order: [['name', 'ASC'],] 
         })        
