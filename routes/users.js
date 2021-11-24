@@ -37,6 +37,16 @@ router.post('/users/userid', function(req, res, next) {
   User.findId(item, res);
 });
 
+router.patch('/users/update', (req, res) => {
+  console.log(req.body)
+  let item = {
+    id: req.body.id,
+    name: req.body.name,
+    rol_id: req.body.rol_id
+  }
+  User.update(item, res);
+})
+
 router.post('/users/save', function(req, res, next) {
   if(!req){
       console.log("=====================================================================")
