@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const Rol = require('../controllers/users/rol');
 
+
 const routes = {
     rolGetAll: '/rol/getAll',
     rolGetOne: '/rol/getOne/:id',
