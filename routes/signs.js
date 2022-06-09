@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const Signs = require('../controllers/signs/sign');
 
+//Object routes
 const routes = {
     signsGetAll: '/signs/getAll',
     signsGetOne: '/signs/getOne/:id',
@@ -13,27 +14,34 @@ const routes = {
     signsDelete: '/signs/delete',
 }
 
+//Ruta para obtener todas las sign
+//Ordenado por nombres
 router.get(routes.signsGetAll, function(req, res, next) {
     Signs.getAll(req, res);
 });
 
+//Ruta para obtener las sign segun su categoria
 router.get(routes.signsGetbyCategory, function(req, res, next) {
     Signs.getallbyCategory(req, res);
 });
 
+//Ruta para buscar las sign segun su nombre
 router.get(routes.signsGetbyName, function(req, res, next) {
     Signs.getAllbyName(req, res);
 });
 
+//Ruta para obtener las sign
+//Ordenado por id
 router.get(routes.signsGetAllId, function(req, res, next) {
     Signs.getallorderbyId(req, res);
 });
 
+//Ruta para buscar una sign por su id
 router.get(routes.signsGetOne, function(req, res, next) {
     Signs.getOne(req, res);
 });
 
-
+//Ruta para  agregar una nueva sign
 router.post(routes.signsSave, function(req, res, next) {
     if(!req){
         console.log("=====================================================================")
@@ -59,6 +67,7 @@ router.post(routes.signsSave, function(req, res, next) {
 
 });
 
+//Ruta para actualizar una sign
 router.patch(routes.signsUpdate, function(req, res, next) {
     if(!req){
         console.log("=====================================================================")
@@ -78,6 +87,7 @@ router.patch(routes.signsUpdate, function(req, res, next) {
     Signs.update(item, res);
 });
 
+//Ruta para eliminar una sign de la BD
 router.delete(routes.signsDelete, function(req, res, next) {
     Signs.deleteItem(req, res);
 });

@@ -1,9 +1,11 @@
+// Dependencias
 const Sign = require('../../models/signs/sign');
 const { Sequelize } = require('sequelize');
 const op =Sequelize.Op
-
 const transform = require('../transforms/signs');
 
+//Funcion para obtener todos los Sign 
+//Ordenado por nombre
 const getAll = (req, res) => {
     const id = req.query.id;
     var condition = id ? { id:`${id}`} : null;
@@ -27,6 +29,8 @@ const getAll = (req, res) => {
     }
 };
 
+//Funcion para obtener todos los Sign 
+//Ordenado por id
 const getallorderbyId = (req, res) => {
     const id = req.query.id;
     var condition = id ? { id:`${id}`} : null;
@@ -51,6 +55,7 @@ const getallorderbyId = (req, res) => {
     }
 };
 
+//Funcion para obtener las Sign segun una categoria
 const getallbyCategory = (req, res) => {
     console.log("=====================================================================")
     console.log('sign get by category: ', req);
@@ -79,6 +84,7 @@ const getallbyCategory = (req, res) => {
     }
 };
 
+//Funcion para obtener las Sign segun un nombre
 const getAllbyName = (req, res) => {
     console.log("=====================================================================")
     console.log('sign get by Name: ', req.body);
@@ -108,6 +114,7 @@ const getAllbyName = (req, res) => {
     }
 };
 
+//Funcion para obtener una Sign segun su id
 const getOne = (req, res) => {
     const id = req.params.id;
     console.log('signs getOne: ', id);
@@ -125,6 +132,7 @@ const getOne = (req, res) => {
     }
 };
 
+//Agregar una nueva Sign
 const save = (item, res) => {
     console.log('sign save: ', item);
     try {
@@ -150,6 +158,7 @@ const save = (item, res) => {
     }
 };
 
+//Modificar una sign
 const update = (item, res) => {
     console.log("=====================================================================")
     console.log('sign update: ', item);
@@ -178,6 +187,7 @@ const update = (item, res) => {
     }
 };
 
+//Eliminar una sign segun su id
 const deleteItem = (req, res) => {
     const id = req.query.id;
     var condition = id ? { id:`${id}`} : null;
@@ -205,6 +215,7 @@ const deleteItem = (req, res) => {
     }
 };
 
+//Exportar funciones de este controlador
 module.exports = {
     getAll: getAll,
     getAllbyName:getAllbyName,

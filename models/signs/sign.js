@@ -3,6 +3,7 @@ const DataTypes = Sequelize.DataTypes;
 const { sequelize } = require('../../services/initService');
 const Category = require('../lessons/category');
 
+//Esquema de datos para las sign
 const Sign = sequelize.define('signs', {
     id: {
         allowNull: false,
@@ -36,6 +37,7 @@ const Sign = sequelize.define('signs', {
     },
 }, { timestamps: false });
 
+//Relacion con el esquema de categoria
 Sign.belongsTo(Category, { as: 'category',foreignKey: 'category_id' });
 
 module.exports = Sign;
