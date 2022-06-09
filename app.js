@@ -72,7 +72,7 @@ app.use('/test', testRouter);
 app.use('/lesson', lessonRouter);
 // DB
 app.use('/', category);
-app.use('/', signs);
+app.use('/', signs); //Se agregan todas las rutas de las sign
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
