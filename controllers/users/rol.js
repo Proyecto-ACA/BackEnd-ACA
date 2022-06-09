@@ -12,8 +12,8 @@ const transform = (records) => {
     });
 }
 
-//Creamos esta funcion que nos servira para realizar peticiones get
-//a la base de datos
+//Creamos esta funcion que nos servira para realizar peticiones GET
+//a la base de datos, trayendo todos los roles
 const getAll = (req, res) => {
     console.log('rols getAll: ', req.body);
     try {
@@ -31,7 +31,7 @@ const getAll = (req, res) => {
 };
 
 //Creamos esta funcion que sirve para realizar peticiones POST
-//a la base de datos
+//a la base de datos, para insertar un nuevo rol
 const save = (item, res) => {
     console.log('Rol save: ', item);
     try {
@@ -58,7 +58,8 @@ const save = (item, res) => {
 };
 
 //Creamos esta funcion que sirve para realizar peticiones PUT
-//a la base de datos
+//a la base de datos, para poder actualizar la informacion de
+//un rol
 const update = (item, res) => {
     console.log('Rol update: ', item);
     try {
@@ -85,7 +86,8 @@ const update = (item, res) => {
 };
 
 //Creamos esta funcion que sirve para realizar peticiones DELETE
-//a la base de datos 
+//a la base de datos, para poder borrar un rolo en especifico
+//en base a su id
 const deleteItem = (item, res) => {
     console.log('Rol update: ', item);
     try {

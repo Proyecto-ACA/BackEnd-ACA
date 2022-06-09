@@ -1,5 +1,8 @@
+//Importamos el modelo de usuarios que se encuentra en la carpeta models
 const User = require('../../models/users/user');
 
+//Esta funcion nos servira para convertir los resultados de la peticion a la base en un archivo JSON
+//Que retorne el id del usuario, el nombre del usuario y el id del rol asociado a ese usuario
 const transform = (records) => {
     return records.map((record) => {
         return {
@@ -10,6 +13,8 @@ const transform = (records) => {
     });
 }
 
+//Creamos esta funcion que nos servira para realizar peticiones get
+//a la base de datos y traer todos los usuarios
 const getAll = (req, res) => {
     console.log('users getAll: ', req.body);
     try {
@@ -26,6 +31,8 @@ const getAll = (req, res) => {
     }
 };
 
+//Creamos esta funcion que sirve para realizar peticiones GET
+//a la base de datos y traer un usuario en especifico
 const getOne = (req, res) => {
     const id = req.params.id;
     console.log('Users getOne: ', id);
@@ -43,6 +50,9 @@ const getOne = (req, res) => {
     }
 };
 
+//Creamos esta funcion que sirve para realizar peticiones GET
+//a la base de datos, buscando un usuario en especifico por
+//medio del nombre
 const findUser = (item, res) => {
     console.log('User save: ', item);
     try {
@@ -72,6 +82,9 @@ const findUser = (item, res) => {
     }
 };
 
+//Creamos esta funcion que sirve para realizar peticiones GET
+//a la base de datos, buscando un usuario en especifico por
+//medio del id
 const findId = (item, res) => {
     console.log('User save: ', item);
     try {
@@ -101,7 +114,8 @@ const findId = (item, res) => {
     }
 };
 
-
+//Creamos esta funcion que sirve para realizar peticiones POST
+//a la base de datos, para insertar un nuevo usuario
 const save = (item, res) => {
     console.log('User save: ', item);
     try {
@@ -127,6 +141,9 @@ const save = (item, res) => {
     }
 };
 
+//Creamos esta funcion que sirve para realizar una peticion PUT
+//a la base de datos, para poder actualizar informacion de los
+//usuarios
 const update = (item, res) => {
     console.log('User update: ', item);
     try {
@@ -151,6 +168,10 @@ const update = (item, res) => {
         });
     }
 };
+
+//Creamos esta funcion que sirve para crear una peticion DELETE
+//a la base de datos, para poder borrar un usuario en especifico
+//por medio del id
 const deleteItem = (req, res) => {
     const id = req.query.id;
     var condition = id ? { id:`${id}`} : null;
@@ -178,6 +199,7 @@ const deleteItem = (req, res) => {
     }
 };
 
+//Exportamos todas las funciones anteriores
 module.exports = {
     getAll: getAll,
     save: save,
