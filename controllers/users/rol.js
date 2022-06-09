@@ -1,5 +1,8 @@
+//Importamos el modelo de rol que se encuentra en la carpeta models
 const Rol = require('../../models/users/rol');
 
+//Esta funcion nos servira para convertir los resultados de la peticion a la base en un archivo JSON
+//Que retorne el id y el nombre de los roles 
 const transform = (records) => {
     return records.map((record) => {
         return {
@@ -9,6 +12,8 @@ const transform = (records) => {
     });
 }
 
+//Creamos esta funcion que nos servira para realizar peticiones get
+//a la base de datos
 const getAll = (req, res) => {
     console.log('rols getAll: ', req.body);
     try {
@@ -25,6 +30,8 @@ const getAll = (req, res) => {
     }
 };
 
+//Creamos esta funcion que sirve para realizar peticiones POST
+//a la base de datos
 const save = (item, res) => {
     console.log('Rol save: ', item);
     try {
@@ -50,6 +57,8 @@ const save = (item, res) => {
     }
 };
 
+//Creamos esta funcion que sirve para realizar peticiones PUT
+//a la base de datos
 const update = (item, res) => {
     console.log('Rol update: ', item);
     try {
@@ -75,6 +84,8 @@ const update = (item, res) => {
     }
 };
 
+//Creamos esta funcion que sirve para realizar peticiones DELETE
+//a la base de datos 
 const deleteItem = (item, res) => {
     console.log('Rol update: ', item);
     try {
@@ -100,6 +111,7 @@ const deleteItem = (item, res) => {
     }
 };
 
+//Exportamos la funciones
 module.exports = {
     getAll: getAll,
     save: save,
