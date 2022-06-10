@@ -1,3 +1,6 @@
+//CRUD - Category
+
+//Dependencia
 const Statisticsxcategory = require('../../models/statistics/statisticsxcategory');
 
 const transform = (records) => {
@@ -9,6 +12,7 @@ const transform = (records) => {
     });
 }
 
+//funcion para obtener registros
 const getAll = (req, res) => {
     console.log('Statisticsxcategory getAll: ', req.body);
     try {
@@ -25,6 +29,7 @@ const getAll = (req, res) => {
     }
 };
 
+//funcion para guardar registro
 const save = (item, res) => {
     console.log('Statisticsxcategory save: ', item);
     try {
@@ -50,6 +55,7 @@ const save = (item, res) => {
     }
 };
 
+//funcion para actualizar registro
 const update = (item, res) => {
     console.log('Statisticsxcategory update: ', item);
     try {
@@ -75,6 +81,7 @@ const update = (item, res) => {
     }
 };
 
+//Funcion para eliminar registro
 const deleteItem = (item, res) => {
     console.log('Statisticsxcategory update: ', item);
     try {
@@ -100,6 +107,7 @@ const deleteItem = (item, res) => {
     }
 };
 
+//Exportar funciones
 module.exports = {
     getAll: getAll,
     save: save,
