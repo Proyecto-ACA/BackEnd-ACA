@@ -50,7 +50,7 @@ const getOne = (req, res) => {
     }
 };
 
-//Creamos esta funcion que sirve para realizar peticiones GET
+//Creamos esta funcion que sirve para realizar peticiones POST
 //a la base de datos, buscando un usuario en especifico por
 //medio del nombre
 const findUser = (item, res) => {
