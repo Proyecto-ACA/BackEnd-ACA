@@ -19,6 +19,6 @@ const transform = (records) => {
 
 //Exportamos las dos funciones anteriores
 module.exports = {
-    transforn: transform,
+    transform: transform,
     render: render
 }
