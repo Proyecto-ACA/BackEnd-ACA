@@ -420,6 +420,9 @@ VALUES (true, 'Sabado',11,'https://firebasestorage.googleapis.com/v0/b/lessa-c8c
 
 INSERT INTO signs( active, name, category_id, sign, description, image)
 VALUES (true, 'Domingo',11,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_domingo.gif?alt=media&token=0693041b-4158-483b-9dbc-a41c58e6b852','Septimo día de la semana civil, quinto de la litúrgica.','https://3.bp.blogspot.com/-JbpK_LzIGR8/WJzNs8-FUvI/AAAAAAAAAik/ofKABQ4udScfZ55x97yK5Z1RmXiZmrvogCLcB/s1600/misterio%2Bde%2Blos%2Bsiete%2Bd%25C3%25ADas%2Bde%2Bla%2Bsemana.jpg');
+--video--
+INSERT INTO signs( active, name, category_id, sign, description, image)
+VALUES (true, 'video',11,'https://firebasestorage.googleapis.com/v0/b/lessa-c8cf6.appspot.com/o/senas%2Fgif_domingo.gif?alt=media&token=0693041b-4158-483b-9dbc-a41c58e6b852','Septimo día de la semana civil, quinto de la litúrgica.','https://3.bp.blogspot.com/-JbpK_LzIGR8/WJzNs8-FUvI/AAAAAAAAAik/ofKABQ4udScfZ55x97yK5Z1RmXiZmrvogCLcB/s1600/misterio%2Bde%2Blos%2Bsiete%2Bd%25C3%25ADas%2Bde%2Bla%2Bsemana.jpg');
 
 
 
@@ -453,21 +456,57 @@ INSERT INTO lesson_levels (level, name) VALUES (1, 'facil');
 INSERT INTO lesson_levels (level, name) VALUES (2, 'normal');
 INSERT INTO lesson_levels (level, name) VALUES (3, 'dificil');
 INSERT INTO lesson_levels (level, name) VALUES (4, 'infierno');
+--
+INSERT INTO lessons (name, image, description, level_id, category_id)
+    VALUES ('leccion 1', 'https://w7.pngwing.com/pngs/869/408/png-transparent-chalkboard-illustration-blackboard-desktop-presentation-classroom-teacher-miscellaneous-angle-class-thumbnail.png','Leccion 1',1,1);
+INSERT INTO lessons (name, image, description, level_id, category_id)
+    VALUES ('leccion 2', 'https://w7.pngwing.com/pngs/869/408/png-transparent-chalkboard-illustration-blackboard-desktop-presentation-classroom-teacher-miscellaneous-angle-class-thumbnail.png','Leccion 2',1,2);
+INSERT INTO lessons (name, image, description, level_id, category_id)
+    VALUES ('leccion 3', 'https://w7.pngwing.com/pngs/869/408/png-transparent-chalkboard-illustration-blackboard-desktop-presentation-classroom-teacher-miscellaneous-angle-class-thumbnail.png','Leccion 3',1,3);
+INSERT INTO lessons (name, image, description, level_id, category_id)
+    VALUES ('leccion 4', 'https://w7.pngwing.com/pngs/869/408/png-transparent-chalkboard-illustration-blackboard-desktop-presentation-classroom-teacher-miscellaneous-angle-class-thumbnail.png','Leccion 4',1,4);
+INSERT INTO lessons (name, image, description, level_id, category_id)
+    VALUES ('leccion 5', 'https://w7.pngwing.com/pngs/869/408/png-transparent-chalkboard-illustration-blackboard-desktop-presentation-classroom-teacher-miscellaneous-angle-class-thumbnail.png','Leccion 5',1,5);
+INSERT INTO lessons (name, image, description, level_id, category_id)
+    VALUES ('leccion 6', 'https://w7.pngwing.com/pngs/869/408/png-transparent-chalkboard-illustration-blackboard-desktop-presentation-classroom-teacher-miscellaneous-angle-class-thumbnail.png','Leccion 6',1,6);
 
-INSERT INTO lessons (name, image, description, level_id, category_id)
-    VALUES ('leccion 1 - 23', 'https://cdn-icons-png.flaticon.com/512/547/547612.png','Leccion 1',1,1);
-INSERT INTO lessons (name, image, description, level_id, category_id)
-    VALUES ('leccion 2 - 23', 'https://cdn-icons-png.flaticon.com/512/547/547612.png','Leccion 2',1,1);
-INSERT INTO lessons (name, image, description, level_id, category_id)
-    VALUES ('leccion 3 - 23', 'https://cdn-icons-png.flaticon.com/512/547/547612.png','Leccion 3',1,1);
-INSERT INTO lessons (name, image, description, level_id, category_id)
-    VALUES ('leccion 4 - 23', 'https://cdn-icons-png.flaticon.com/512/547/547612.png','Leccion 4',1,1);
 
 INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 1, 1);
 INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 2, 1);
 INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 3, 1);
 INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 4, 1);
-INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 5, 2);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (1, 123, 2);
+
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (2, 30, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (2, 31, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (2, 32, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (2, 34, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (2, 123, 2);
+
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (3, 40, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (3, 41, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (3, 42, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (3, 43, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (3, 123, 2);
+
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (4, 51, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (4, 52, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (4, 53, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (4, 54, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (4, 123, 2);
+
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (5, 66, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (5, 67, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (5, 68, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (5, 69, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (5, 123, 2);
+
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (6, 77, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (6, 78, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (6, 79, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (6, 80, 1);
+INSERT INTO lesson_x_sign (lesson_id, sign_id, type) VALUES (6, 123, 2);
+--
 
 INSERT INTO tests (name, difficulty_id, category_id) VALUES ('Examen 1', 1, 1);
 INSERT INTO tests (name, difficulty_id, category_id) VALUES ('Examen 2', 2, 2);
