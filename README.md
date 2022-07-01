@@ -1,25 +1,6 @@
-# Para usar Backend necesitamos:
+Podemos guiarnos del manual técnico y del manual de usuario para poder utilizar la aplicación sin mayor problema
 
-## El archivo .env
-con los datos de la base 
-(ver el archivo ejemplo de .env)
-
-## Base
-
-base de datos Postgres corriendo
-
-## Puerto:
-
-http://localhost:3023/
-
-# DB
-http://localhost:3023/category/getAll
-
-
-http://localhost:3023/signs/getAll
-
-
-## TEST
-http://localhost:3023/test/category/getAll
-http://localhost:3023/test/difficulty/getAll
-http://localhost:3023/test/test/getAll
+Aquí encontrarás la información necesaria para utilizar el sistema.
+# Manuales
+* [Manual Técnico](https://github.com/Proyecto-ACA/FrontEnd-ACA/wiki/Manual-T%C3%A9cnico)
+* [Manual de usuario](https://github.com/Proyecto-ACA/FrontEnd-ACA/wiki/Manual-de-usuario)
